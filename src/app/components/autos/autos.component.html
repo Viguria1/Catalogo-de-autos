@@ -1,0 +1,6 @@
+<h2>Lista de Autos</h2>
+<ul>
+  <li *ngFor="let auto of autos">
+    {{ auto.modelo }} - {{ auto.precio | currency:'USD' }}
+  </li>
+</ul>
