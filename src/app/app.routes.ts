@@ -11,4 +11,7 @@ export const routes: Routes = [
   { path: 'auto/:id', component: AutoDetalleComponent },
   { path: '**', redirectTo: '' }
 ];
+<<<<<<< HEAD
 
+=======
+>>>>>>> cd5dae4892977b3b4e579ff5ae28d53469f49f27

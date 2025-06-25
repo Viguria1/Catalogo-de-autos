@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="marca-buttons">
   <button *ngFor="let marca of marcas" (click)="seleccionarMarca(marca)">
     {{ marca }}
@@ -19,3 +20,11 @@
     </ul>
   </div>
 </div>
+=======
+<h2>Lista de Autos</h2>
+<ul>
+  <li *ngFor="let auto of autos">
+    {{ auto.modelo }} - {{ auto.precio | currency:'USD' }}
+  </li>
+</ul>
+>>>>>>> cd5dae4892977b3b4e579ff5ae28d53469f49f27

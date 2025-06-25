@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+=======
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AutosService } from '../../services/autos.service';
+import { Auto } from '../../interfaces/auto';
+>>>>>>> cd5dae4892977b3b4e579ff5ae28d53469f49f27
 
 @Component({
   selector: 'app-autos',
   standalone: true,
   imports: [CommonModule],
+<<<<<<< HEAD
   templateUrl: './autos.component.html',
   styleUrls: ['./autos.component.css']
 })
@@ -44,5 +52,19 @@ export class AutosComponent {
     const autosMarca = this.autos.filter(auto => auto.marca === this.marcaSeleccionada);
     const valores = autosMarca.map(auto => auto[this.seccion!]);
     return Array.from(new Set(valores.map(v => String(v))));
+=======
+  providers: [AutosService],
+  templateUrl: './autos.component.html',
+})
+export class AutosComponent implements OnInit {
+  autos: Auto[] = [];
+
+  constructor(private autosService: AutosService) {}
+
+  ngOnInit() {
+    this.autosService.obtenerAutos().subscribe((data: Auto[]) => {
+      this.autos = data;
+    });
+>>>>>>> cd5dae4892977b3b4e579ff5ae28d53469f49f27
   }
 }
