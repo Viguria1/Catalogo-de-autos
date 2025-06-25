@@ -1,0 +1,21 @@
+<div class="marca-buttons">
+  <button *ngFor="let marca of marcas" (click)="seleccionarMarca(marca)">
+    {{ marca }}
+  </button>
+</div>
+
+<div *ngIf="marcaSeleccionada">
+  <h2>Marca seleccionada: {{ marcaSeleccionada }}</h2>
+  <div class="info-buttons">
+    <button (click)="mostrarSeccion('tipo')">Tipos de autos</button>
+    <button (click)="mostrarSeccion('año')">Años de creación</button>
+    <button (click)="mostrarSeccion('modelo')">Modelos</button>
+  </div>
+
+  <div class="info-list" *ngIf="seccion">
+    <h3>{{ seccion | titlecase }} disponibles:</h3>
+    <ul>
+      <li *ngFor="let dato of datosFiltrados()">{{ dato }}</li>
+    </ul>
+  </div>
+</div>
