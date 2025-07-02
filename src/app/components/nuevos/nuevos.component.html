@@ -1,0 +1,12 @@
+<h2>Autos Nuevos</h2>
+<div *ngIf="nuevos.length > 0; else sinNuevos">
+  <ul>
+    <li *ngFor="let auto of nuevos">
+      {{ auto.modelo }} - {{ auto.lanzamiento }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #sinNuevos>
+  <p>No hay autos nuevos este año.</p>
+</ng-template>

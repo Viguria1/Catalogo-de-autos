@@ -1,0 +1,71 @@
+<!-- Sección completa con fondo: título + logos -->
+<div class="catalogo-header">
+  <h2>Catálogo de Autos</h2>
+
+  <div class="autos-marcas">
+    <div class="marca-item" (click)="scrollTo('Toyota')">
+      <img src="https://www.car-brand-names.com/wp-content/uploads/2015/07/Toyota-emblem-3.jpg" alt="Toyota" />
+      <p>Toyota</p>
+    </div>
+    <div class="marca-item" (click)="scrollTo('Kia')">
+      <img src="https://1000marcas.net/wp-content/uploads/2020/01/KIA-Logo.png" alt="Kia" />
+      <p>Kia</p>
+    </div>
+    <div class="marca-item" (click)="scrollTo('Hyundai')">
+      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Hyundai-Logo.png" alt="Hyundai" />
+      <p>Hyundai</p>
+    </div>
+    <div class="marca-item" (click)="scrollTo('Nissan')">
+      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Nissan-Logo.png" alt="Nissan" />
+      <p>Nissan</p>
+    </div>
+    <div class="marca-item" (click)="scrollTo('Chevrolet')">
+      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Chevrolet-Logo.png" alt="Chevrolet" />
+      <p>Chevrolet</p>
+    </div>
+    <div class="marca-item" (click)="scrollTo('Suzuki')">
+      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Suzuki-Logo.png" alt="Suzuki" />
+      <p>Suzuki</p>
+    </div>
+    <div class="marca-item" (click)="scrollTo('Volkswagen')">
+      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Volkswagen-Logo.png" alt="Volkswagen" />
+      <p>Volkswagen</p>
+    </div>
+    <div class="marca-item" (click)="scrollTo('Mitsubishi')">
+      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Mitsubishi-Logo.png" alt="Mitsubishi" />
+      <p>Mitsubishi</p>
+    </div>
+  </div>
+</div>
+
+<!-- Secciones por marca -->
+<div *ngFor="let marca of marcas">
+  <h3 id="{{ marca }}">{{ marca }}</h3>
+  <div class="autos-grid">
+    <div class="auto-card" *ngFor="let auto of getAutosPorMarca(marca)" (click)="abrirDetalle(auto)">
+      <img [src]="auto.imagen" [alt]="auto.modelo" />
+      <h4>{{ auto.modelo }}</h4>
+      <p><strong>Precio:</strong> {{ auto.precio | currency }}</p>
+      <p><strong>Año:</strong> {{ auto.lanzamiento }}</p>
+      <p><strong>Tipo:</strong> {{ auto.tipo }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="autoSeleccionado">
+  <div class="modal-content">
+    <span class="close" (click)="cerrarDetalle()">&times;</span>
+    <div class="modal-flex">
+      <img [src]="autoSeleccionado.imagen" [alt]="autoSeleccionado.modelo" />
+      <div class="modal-info">
+        <h2>{{ autoSeleccionado.modelo }}</h2>
+        <p><strong>Marca:</strong> {{ autoSeleccionado.marca }}</p>
+        <p><strong>Precio:</strong> {{ autoSeleccionado.precio | currency }}</p>
+        <p><strong>Año de lanzamiento:</strong> {{ autoSeleccionado.lanzamiento }}</p>
+        <p><strong>Tipo:</strong> {{ autoSeleccionado.tipo }}</p>
+        <p>{{ autoSeleccionado.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</div>
