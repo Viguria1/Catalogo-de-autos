@@ -37,7 +37,7 @@ export class AutosComponent {
     precio: 28000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://www.kia.com/content/dam/kia2/in/en/images/showroom/seltos/showroom-seltos-23my-gallery-exterior-01.jpg',
+    imagen: 'https://cdn.motor1.com/images/mgl/1Zpol3/s1/2024-kia-seltos-us-spec.jpg',
     descripcion: 'Tecnología moderna y diseño deportivo.',
     marca: 'Kia'
   },
@@ -47,7 +47,7 @@ export class AutosComponent {
     precio: 32000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://cdn.motor1.com/images/mgl/g6ZP3/s1/hyundai-tucson-2021.jpg',
+    imagen: 'https://th.bing.com/th/id/R.b93b3c1b7bb877bc035cacc417663d38?rik=5ui05NacJlj%2bYg&pid=ImgRaw&r=0',
     descripcion: 'Moderno, seguro y elegante.',
     marca: 'Hyundai'
   },
@@ -57,7 +57,7 @@ export class AutosComponent {
     precio: 25000,
     lanzamiento: 2023,
     tipo: 'Sedán',
-    imagen: 'https://cdn.motor1.com/images/mgl/v0qLJ/s1/2020-nissan-sentra.jpg',
+    imagen: 'https://tse4.mm.bing.net/th/id/OIP.zwGkqP7thvBsida736sXWgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
     descripcion: 'Equilibrio entre confort y economía.',
     marca: 'Nissan'
   },
@@ -67,7 +67,7 @@ export class AutosComponent {
     precio: 21000,
     lanzamiento: 2024,
     tipo: 'Hatchback',
-    imagen: 'https://acnews.blob.core.windows.net/imgnews/large/NAZ_2f3172c23a01421a88380fe6f3bc877e.jpg',
+    imagen: 'https://guiaauto.com.br/wp-content/uploads/2023/08/image-1024x796.png',
     descripcion: 'Eficiente y accesible.',
     marca: 'Chevrolet'
   },
@@ -77,7 +77,7 @@ export class AutosComponent {
     precio: 19000,
     lanzamiento: 2024,
     tipo: 'Compacto',
-    imagen: 'https://cdn.motor1.com/images/mgl/KY9jm/s1/2021-suzuki-swift-sport.jpg',
+    imagen: 'https://www.autosrodando.com/wp-content/uploads/2023/08/suzuki-swift-2024-rendered.jpeg',
     descripcion: 'Pequeño, ágil y económico.',
     marca: 'Suzuki'
   },
@@ -87,7 +87,7 @@ export class AutosComponent {
     precio: 27000,
     lanzamiento: 2024,
     tipo: 'Hatchback',
-    imagen: 'https://cdn.motor1.com/images/mgl/M0A6z/s1/2021-volkswagen-golf-gti.jpg',
+    imagen: 'https://cdn.motor1.com/images/mgl/nA9Joj/s1/2024-volkswagen-golf-gti-380.jpg',
     descripcion: 'Tradición y tecnología.',
     marca: 'Volkswagen'
   },
@@ -97,7 +97,7 @@ export class AutosComponent {
     precio: 34000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://cdn.motor1.com/images/mgl/kWWOo/s1/2022-mitsubishi-outlander.jpg',
+    imagen: 'https://tse2.mm.bing.net/th/id/OIP.jjoLoULsNqfH0oTnIsVXmQHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
     descripcion: 'Espacioso, potente y familiar.',
     marca: 'Mitsubishi'
   },
@@ -107,7 +107,7 @@ export class AutosComponent {
     precio: 38000,
     lanzamiento: 2023,
     tipo: 'Pickup',
-    imagen: 'https://acnews.blob.core.windows.net/imgnews/large/NAZ_9bcb844f4d3444518bc7cda1d879a4f2.jpg',
+    imagen: 'https://tse3.mm.bing.net/th/id/OIP.vIJ5ICY_9WuXVuxLpO0FvgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
     descripcion: 'Potencia y resistencia para cualquier terreno.',
     marca: 'Toyota'
   },
@@ -117,7 +117,7 @@ export class AutosComponent {
     precio: 42000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://toyotaperu.vtexassets.com/arquivos/ids/158344/TOYOTA-RAV4-HYBRID-1.jpg?v=638144164447300000',
+    imagen: 'https://www.motortrend.com/uploads/2023/08/009-2024-Toyota-RAV4-Prime-Plug-In-Hybrid-front-three-quarters.jpg',
     descripcion: 'SUV híbrido moderno y versátil.',
     marca: 'Toyota'
   },
@@ -127,7 +127,7 @@ export class AutosComponent {
     precio: 19000,
     lanzamiento: 2023,
     tipo: 'Hatchback',
-    imagen: 'https://cdn.motor1.com/images/mgl/zjjwW/s1/2023-toyota-yaris.jpg',
+    imagen: 'https://images.carexpert.com.au/resize/3000/-/app/uploads/2023/01/Toyota-Yaris-Cross-GR-Sport-2WD-Hybrid-HERO-16x9-1-1.jpg',
     descripcion: 'Compacto, práctico y económico.',
     marca: 'Toyota'
   },
@@ -137,7 +137,7 @@ export class AutosComponent {
     precio: 52000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://img.remediosdigitales.com/61ae89/toyota-fortuner-2021-1600-02/840_560.jpg',
+    imagen: 'https://cdn.pune.news/wp-content/uploads/2023/10/2024-Toyota-Fortuner-SUV.webp',
     descripcion: 'SUV robusto, ideal para aventuras.',
     marca: 'Toyota'
   },
@@ -147,7 +147,7 @@ export class AutosComponent {
     precio: 20000,
     lanzamiento: 2023,
     tipo: 'Sedán',
-    imagen: 'https://cdn.motor1.com/images/mgl/KP1zJ/s1/kia-rio-2021.jpg',
+    imagen: 'https://th.bing.com/th/id/R.9956925e3f4b54686e8a9d3f819ce4ec?rik=RufPmlLIleAqzQ&pid=ImgRaw&r=0',
     descripcion: 'Eficiente, compacto y económico.',
     marca: 'Kia'
   },
@@ -157,7 +157,7 @@ export class AutosComponent {
     precio: 33000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://acnews.blob.core.windows.net/imgnews/large/NAZ_b5e9a63a164e432c81b74e2b69432894.jpg',
+    imagen: 'https://images.carexpert.com.au/resize/3000/-/app/uploads/2023/07/230324_Kia-Sportage-S-2.0D-AWD_Still-29.jpg',
     descripcion: 'SUV moderno con gran tecnología.',
     marca: 'Kia'
   },
@@ -167,7 +167,7 @@ export class AutosComponent {
     precio: 16000,
     lanzamiento: 2023,
     tipo: 'Hatchback',
-    imagen: 'https://cdn.motor1.com/images/mgl/qOkpE/s1/kia-picanto-2021.jpg',
+    imagen: 'https://images.carexpert.com.au/crop/1600/1067/app/uploads/2023/01/2023-Kia-Picanto-GT-36.jpg',
     descripcion: 'Compacto, ideal para ciudad.',
     marca: 'Kia'
   },
@@ -177,7 +177,7 @@ export class AutosComponent {
     precio: 37000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://cdn.motor1.com/images/mgl/0ANXY/s1/2021-kia-sorento.jpg',
+    imagen: 'https://th.bing.com/th/id/R.b7fc2c3e60187ae439815c6d4a78fb51?rik=IXZycyxt251BZQ&pid=ImgRaw&r=0',
     descripcion: 'Espacio, potencia y elegancia.',
     marca: 'Kia'
   },
@@ -187,7 +187,7 @@ export class AutosComponent {
     precio: 45000,
     lanzamiento: 2023,
     tipo: 'Deportivo',
-    imagen: 'https://cdn.motor1.com/images/mgl/6VVXb/s1/2022-kia-stinger.jpg',
+    imagen: 'https://th.bing.com/th/id/R.6e13258e4f7c4194880fc3bc4a5db149?rik=dqFRp%2biwRogPcQ&pid=ImgRaw&r=0',
     descripcion: 'Deportivo de alto rendimiento y lujo.',
     marca: 'Kia'
   },
@@ -197,7 +197,7 @@ export class AutosComponent {
     precio: 31000,
     lanzamiento: 2024,
     tipo: 'SUV Híbrido',
-    imagen: 'https://cdn.motor1.com/images/mgl/Wp2Ew/s1/kia-niro-2022.jpg',
+    imagen: 'https://tse2.mm.bing.net/th/id/OIP.kA7WKsbKqfRLmlbysgB3FAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
     descripcion: 'SUV ecológico y moderno.',
     marca: 'Kia'
   },
@@ -207,7 +207,7 @@ export class AutosComponent {
     precio: 39000,
     lanzamiento: 2024,
     tipo: 'Minivan',
-    imagen: 'https://cdn.motor1.com/images/mgl/6yNWR/s1/kia-carnival.jpg',
+    imagen: 'https://carmoru.com/wp-content/uploads/2024/11/Kia-Carnival-2024-Price-In-Malaysia.jpg',
     descripcion: 'Espacio y comodidad para la familia.',
     marca: 'Kia'
   },
@@ -217,7 +217,7 @@ export class AutosComponent {
     precio: 22000,
     lanzamiento: 2023,
     tipo: 'Crossover',
-    imagen: 'https://cdn.motor1.com/images/mgl/0ANXY/s1/2021-kia-soul.jpg',
+    imagen: 'https://tse1.mm.bing.net/th/id/OIP.RIi-Dznk16mBQCHvWEZfMwHaE2?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
     descripcion: 'Estilo único y funcionalidad urbana.',
     marca: 'Kia'
   },
@@ -227,7 +227,7 @@ export class AutosComponent {
     precio: 30000,
     lanzamiento: 2024,
     tipo: 'Híbrido',
-    imagen: 'https://cdn.motor1.com/images/mgl/LBB6R/s1/2023-toyota-prius.jpg',
+    imagen: 'https://www.motortrend.com/uploads/2023/08/2024-Toyota-Prius-Prime-front-view-25.jpeg',
     descripcion: 'Tecnología híbrida con diseño futurista.',
     marca: 'Toyota'
   },
@@ -237,7 +237,7 @@ export class AutosComponent {
     precio: 35000,
     lanzamiento: 2023,
     tipo: 'Sedán',
-    imagen: 'https://cdn.motor1.com/images/mgl/8BB6R/s1/2023-toyota-camry.jpg',
+    imagen: 'https://www.thedrive.com/uploads/2022/11/30/camrynightshadehybrid-39-scaled.jpg?auto=webp&crop=16:9&auto=webp&optimize=high&quality=70&width=1440',
     descripcion: 'Elegancia, espacio y eficiencia.',
     marca: 'Toyota'
   },
@@ -247,7 +247,7 @@ export class AutosComponent {
     precio: 60000,
     lanzamiento: 2024,
     tipo: 'SUV 4x4',
-    imagen: 'https://cdn.motor1.com/images/mgl/xPPWb/s1/2023-toyota-land-cruiser.jpg',
+    imagen: 'https://cdn.motor1.com/images/mgl/MkJo74/s1/2024-toyota-land-cruiser-exterior-front-quarter.jpg',
     descripcion: 'Lujoso, potente y apto para todo terreno.',
     marca: 'Toyota'
   },
@@ -257,7 +257,7 @@ export class AutosComponent {
     precio: 21000,
     lanzamiento: 2023,
     tipo: 'Minivan',
-    imagen: 'https://toyotaperu.vtexassets.com/arquivos/ids/156190/Toyota-Avanza-2.jpg',
+    imagen: 'https://th.bing.com/th/id/R.d098d56a05c8c8683724aa945d2237cc?rik=VatbpL2cNOUSnQ&pid=ImgRaw&r=0',
     descripcion: 'Compacta y versátil, ideal para familias.',
     marca: 'Toyota'
   },
@@ -267,7 +267,7 @@ export class AutosComponent {
     precio: 24000,
     lanzamiento: 2023,
     tipo: 'Sedán',
-    imagen: 'https://cdn.motor1.com/images/mgl/0xM2V/s1/2023-hyundai-elantra.jpg',
+    imagen: 'https://tse4.mm.bing.net/th/id/OIP.vT2XdpIvnmg6ENu0KBtYpwHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
     descripcion: 'Diseño deportivo y eficiencia de combustible.',
     marca: 'Hyundai'
   },
@@ -277,7 +277,7 @@ export class AutosComponent {
     precio: 37000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://cdn.motor1.com/images/mgl/JwwZq/s1/2024-hyundai-santa-fe.jpg',
+    imagen: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqBzm575QkOZ_Cu6wuoHuK8w9dxV6UQ7IMbEOA0XNgUFD2wCAkI9KDhWOaSckvJ6MJtlyPa4WENdELREbeOcTmjHu3dy4MkDhnwZ54uYL4X3lJxeBNW22HOd8w79yGUaePYOZd1dbfnPIw9T1GE3DX6fF_ntS6Zpjva-mk9dEr-sDl6R3a3FccOu5regU/s1974/Hyundai-Santa-Fe-2024%20(1).jpg',
     descripcion: 'Amplio, cómodo y listo para aventuras.',
     marca: 'Hyundai'
   },
@@ -287,7 +287,7 @@ export class AutosComponent {
     precio: 18000,
     lanzamiento: 2023,
     tipo: 'Sedán compacto',
-    imagen: 'https://cdn.motor1.com/images/mgl/0xqPm/s1/hyundai-accent-2023.jpg',
+    imagen: 'https://unbox.ph/wp-content/uploads/2023/03/hyundai-accent-2023-4-1679448111.jpeg',
     descripcion: 'Compacto, económico y confiable.',
     marca: 'Hyundai'
   },
@@ -297,7 +297,7 @@ export class AutosComponent {
     precio: 27000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://cdn.motor1.com/images/mgl/LPP0J/s1/2024-hyundai-kona.jpg',
+    imagen: 'https://tse4.mm.bing.net/th/id/OIP.je_7fJ6S2CkJ15J62SUVewHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
     descripcion: 'Estilo moderno y tecnología avanzada.',
     marca: 'Hyundai'
   },
@@ -307,7 +307,7 @@ export class AutosComponent {
     precio: 26000,
     lanzamiento: 2024,
     tipo: 'SUV',
-    imagen: 'https://cdn.motor1.com/images/mgl/BXXQP/s1/hyundai-creta-2023.jpg',
+    imagen: 'https://img-ik.cars.co.za/news-site-za/images/2024/01/2024-Hyundai-Creta-1.jpg?tr=w-1200,h-800',
     descripcion: 'SUV compacto con gran estilo.',
     marca: 'Hyundai'
   },
@@ -317,7 +317,7 @@ export class AutosComponent {
     precio: 20000,
     lanzamiento: 2023,
     tipo: 'Hatchback',
-    imagen: 'https://cdn.motor1.com/images/mgl/g22Mb/s1/hyundai-i20-n-line-2023.jpg',
+    imagen: 'https://images.prismic.io/carwow/e25c5425-47fb-4966-af5c-9006c9075ec5_Hyundaii20-012.jpg',
     descripcion: 'Ideal para ciudad, eficiente y moderno.',
     marca: 'Hyundai'
   },
@@ -327,7 +327,7 @@ export class AutosComponent {
     precio: 45000,
     lanzamiento: 2024,
     tipo: 'SUV grande',
-    imagen: 'https://cdn.motor1.com/images/mgl/7YYRW/s1/2023-hyundai-palisade.jpg',
+    imagen: 'https://media.ed.edmunds-media.com/hyundai/palisade/2024/fe/2024_hyundai_palisade_f34_fe_1025221_1280.jpg',
     descripcion: 'Gran capacidad y lujo familiar.',
     marca: 'Hyundai'
   },
@@ -337,7 +337,7 @@ export class AutosComponent {
     precio: 22000,
     lanzamiento: 2024,
     tipo: 'SUV compacto',
-    imagen: 'https://cdn.motor1.com/images/mgl/6ooXb/s1/2022-hyundai-venue.jpg',
+    imagen: 'https://www.motortrend.com/uploads/2023/07/2024-Hyundai-Venue-side-view-68.jpg',
     descripcion: 'Compacto, versátil y con estilo juvenil.',
     marca: 'Hyundai'
   },
@@ -347,7 +347,7 @@ export class AutosComponent {
   precio: 20000,
   lanzamiento: 2024,
   tipo: 'Sedán',
-  imagen: 'https://cdn.motor1.com/images/mgl/Qm9kb/s1/2023-nissan-versa.jpg',
+  imagen: 'https://cdn.motor1.com/images/mgl/g4lQyE/s1/nissan-versa-2024.jpg',
   descripcion: 'Sedán confiable, económico y moderno.',
   marca: 'Nissan'
 },
@@ -357,7 +357,7 @@ export class AutosComponent {
   precio: 29000,
   lanzamiento: 2024,
   tipo: 'Sedán',
-  imagen: 'https://cdn.motor1.com/images/mgl/6xJ3v/s1/2023-nissan-altima.jpg',
+  imagen: 'https://imageonthefly.autodatadirect.com/images/?width=1200&height=900&IMG=USD30NIC041E01300.jpg',
   descripcion: 'Diseño elegante con tecnología avanzada.',
   marca: 'Nissan'
 },
@@ -367,7 +367,7 @@ export class AutosComponent {
   precio: 47000,
   lanzamiento: 2024,
   tipo: 'SUV grande',
-  imagen: 'https://cdn.motor1.com/images/mgl/wJxkN/s1/2022-nissan-pathfinder.jpg',
+  imagen: 'https://www.motortrend.com/uploads/2023/08/2024-Nissan-Pathfinder-Platinum-front-view-4.jpg',
   descripcion: 'Espacio para toda la familia y potencia.',
   marca: 'Nissan'
 },
@@ -377,7 +377,7 @@ export class AutosComponent {
   precio: 36000,
   lanzamiento: 2023,
   tipo: 'Pickup',
-  imagen: 'https://cdn.motor1.com/images/mgl/QkkPn/s1/2022-nissan-frontier.jpg',
+  imagen: 'https://cdn.motor1.com/images/mgl/AkKKLN/s1/2023-nissan-frontier.jpg',
   descripcion: 'Pickup robusta y lista para el trabajo.',
   marca: 'Nissan'
 },
@@ -387,7 +387,7 @@ export class AutosComponent {
   precio: 39000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/QZZz6/s1/nissan-x-trail-2023.jpg',
+  imagen: 'https://images.carexpert.com.au/resize/3000/-/app/uploads/2023/08/230317_Nissan-X-Trail-ST-L-4WD-7-Seat_Still-21.jpg',
   descripcion: 'SUV versátil, ideal para familia y viajes.',
   marca: 'Nissan'
 },
@@ -397,7 +397,7 @@ export class AutosComponent {
   precio: 24000,
   lanzamiento: 2024,
   tipo: 'SUV compacto',
-  imagen: 'https://cdn.motor1.com/images/mgl/Mzzlp/s1/2023-nissan-kicks.jpg',
+  imagen: 'https://cdn.motor1.com/images/mgl/zx907W/s1/nissan-kicks-exclusive-2024.jpg',
   descripcion: 'Moderno, juvenil y eficiente.',
   marca: 'Nissan'
 },
@@ -407,7 +407,7 @@ export class AutosComponent {
   precio: 37000,
   lanzamiento: 2023,
   tipo: 'Eléctrico',
-  imagen: 'https://cdn.motor1.com/images/mgl/jppMn/s1/2022-nissan-leaf.jpg',
+  imagen: 'https://pictures.dealer.com/d/ddcleithvinfast/1121/e0c94b4704ccc6c93956cfc457b01e4fx.jpg?impolicy=resize&w=1024',
   descripcion: 'Eléctrico eficiente y ecológico.',
   marca: 'Nissan'
 },
@@ -417,7 +417,7 @@ export class AutosComponent {
   precio: 113000,
   lanzamiento: 2023,
   tipo: 'Deportivo',
-  imagen: 'https://cdn.motor1.com/images/mgl/zZ3eE/s1/nissan-gt-r-2023.jpg',
+  imagen: 'https://i.gaw.to/vehicles/photos/40/33/403316-2023-nissan-gt-r.jpg',
   descripcion: 'Poder y velocidad en estado puro.',
   marca: 'Nissan'
 },
@@ -427,7 +427,7 @@ export class AutosComponent {
   precio: 15000,
   lanzamiento: 2023,
   tipo: 'Hatchback',
-  imagen: 'https://cdn.motor1.com/images/mgl/Y4bLw/s1/chevrolet-spark-2022.jpg',
+  imagen: 'https://www.comparendossimit.com/wp-content/uploads/2022/04/chevrolet-spark-gt-1-24.jpg',
   descripcion: 'Económico, compacto y perfecto para ciudad.',
   marca: 'Chevrolet'
 },
@@ -437,7 +437,7 @@ export class AutosComponent {
   precio: 24000,
   lanzamiento: 2024,
   tipo: 'Sedán',
-  imagen: 'https://cdn.motor1.com/images/mgl/vqqJg/s1/chevrolet-cruze-2022.jpg',
+  imagen: 'https://tse4.mm.bing.net/th/id/OIP.ezFqsnS4nuOjkNepEdQ6EgHaEC?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
   descripcion: 'Buen rendimiento y diseño moderno.',
   marca: 'Chevrolet'
 },
@@ -447,7 +447,7 @@ export class AutosComponent {
   precio: 29000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/3XnXm/s1/chevrolet-tracker-2021.jpg',
+  imagen: 'https://garagem360.com.br/wp-content/uploads/2023/09/Chevrolet-Tracker-Premier-2024-2.jpg',
   descripcion: 'SUV urbano, práctico y tecnológico.',
   marca: 'Chevrolet'
 },
@@ -457,7 +457,7 @@ export class AutosComponent {
   precio: 34000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/2bL7J/s1/2022-chevrolet-equinox.jpg',
+  imagen: 'https://www.motortrend.com/uploads/2023/05/2024-chevrolet-equinox-motion-front-view-001.jpg',
   descripcion: 'Espacioso, seguro y conectado.',
   marca: 'Chevrolet'
 },
@@ -467,7 +467,7 @@ export class AutosComponent {
   precio: 41000,
   lanzamiento: 2023,
   tipo: 'Pickup',
-  imagen: 'https://cdn.motor1.com/images/mgl/BXAKz/s1/2023-chevrolet-colorado.jpg',
+  imagen: 'https://www.motortrend.com/uploads/2022/07/005-2023-Chevrolet-Colorado-ZR2-First-Look.jpg',
   descripcion: 'Fuerza, durabilidad y capacidad de carga.',
   marca: 'Chevrolet'
 },
@@ -477,7 +477,7 @@ export class AutosComponent {
   precio: 46000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/JXXRk/s1/2023-chevrolet-blazer.jpg',
+  imagen: 'https://siempreauto.com/wp-content/uploads/sites/9/2023/10/2024-chevrolet-blazer-001-e1698622351488.jpg?resize=360',
   descripcion: 'SUV con estilo deportivo y tecnología.',
   marca: 'Chevrolet'
 },
@@ -487,7 +487,7 @@ export class AutosComponent {
   precio: 68000,
   lanzamiento: 2024,
   tipo: 'SUV grande',
-  imagen: 'https://cdn.motor1.com/images/mgl/80pJj/s1/2023-chevrolet-tahoe.jpg',
+  imagen: 'https://i.gaw.to/vehicles/photos/40/36/403661-2024-chevrolet-tahoe.jpg',
   descripcion: 'Gran espacio, lujo y potencia.',
   marca: 'Chevrolet'
 },
@@ -497,7 +497,7 @@ export class AutosComponent {
   precio: 59000,
   lanzamiento: 2023,
   tipo: 'Deportivo',
-  imagen: 'https://cdn.motor1.com/images/mgl/nAAqP/s1/2023-chevrolet-camaro.jpg',
+  imagen: 'https://th.bing.com/th/id/R.ea81a6b2a86adabd0ed451949a127a70?rik=J6SEQY%2fVPPRKvg&pid=ImgRaw&r=0',
   descripcion: 'Muscle car icónico con gran potencia.',
   marca: 'Chevrolet'
 },
@@ -507,7 +507,7 @@ export class AutosComponent {
   precio: 18000,
   lanzamiento: 2024,
   tipo: 'Hatchback',
-  imagen: 'https://cdn.motor1.com/images/mgl/mBBkZ/s1/2022-suzuki-baleno.jpg',
+  imagen: 'https://revistartt.cl/wp-content/uploads/2022/11/Suzuki-New-Baleno-054-scaled.jpg',
   descripcion: 'Hatchback espacioso y eficiente.',
   marca: 'Suzuki'
 },
@@ -517,7 +517,7 @@ export class AutosComponent {
   precio: 14000,
   lanzamiento: 2023,
   tipo: 'Compacto',
-  imagen: 'https://cdn.motor1.com/images/mgl/nx33e/s1/2022-suzuki-celerio.jpg',
+  imagen: 'https://tse4.mm.bing.net/th/id/OIP.5ejETm_kS_XPiAHf02XOBQHaEC?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
   descripcion: 'Ideal para ciudad, económico y práctico.',
   marca: 'Suzuki'
 },
@@ -527,7 +527,7 @@ export class AutosComponent {
   precio: 26000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/gppN6/s1/2021-suzuki-vitara.jpg',
+  imagen: 'https://cdn.motor1.com/images/mgl/MkOVVN/s1/suzuki-vitara-2024.jpg',
   descripcion: 'SUV versátil y confiable para toda la familia.',
   marca: 'Suzuki'
 },
@@ -537,7 +537,7 @@ export class AutosComponent {
   precio: 27000,
   lanzamiento: 2024,
   tipo: 'Todo terreno',
-  imagen: 'https://cdn.motor1.com/images/mgl/JqqNk/s1/2023-suzuki-jimny.jpg',
+  imagen: 'https://images.carexpert.com.au/resize/3000/-/app/uploads/2024/08/Suzuki-Jimny-XL-5-Door-PROMO-PHOTOS-1.jpg',
   descripcion: 'Diseño retro y gran capacidad off-road.',
   marca: 'Suzuki'
 },
@@ -547,7 +547,7 @@ export class AutosComponent {
   precio: 30000,
   lanzamiento: 2023,
   tipo: 'Crossover',
-  imagen: 'https://cdn.motor1.com/images/mgl/pqqxz/s1/2022-suzuki-s-cross.jpg',
+  imagen: 'https://galeria.cdn.totalcar.hu/tesztek/2023/05/17/suzuki_s-cross_2023/48935458_5726080fd5a2ccb1ff154025658805ae_x.jpg',
   descripcion: 'Crossover eficiente y elegante.',
   marca: 'Suzuki'
 },
@@ -557,7 +557,7 @@ export class AutosComponent {
   precio: 16000,
   lanzamiento: 2024,
   tipo: 'Micro SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/ErvYe/s1/2023-suzuki-ignis.jpg',
+  imagen: 'https://th.bing.com/th/id/R.2021f6788d95c77434c2584d82323cd7?rik=wccS%2b4q5unGJNA&pid=ImgRaw&r=0',
   descripcion: 'Pequeño, divertido y práctico.',
   marca: 'Suzuki'
 },
@@ -567,7 +567,7 @@ export class AutosComponent {
   precio: 24000,
   lanzamiento: 2024,
   tipo: 'Minivan',
-  imagen: 'https://cdn.motor1.com/images/mgl/lAAp3/s1/2022-suzuki-ertiga.jpg',
+  imagen: 'https://acnews.blob.core.windows.net/imgnews/paragraph/NPAZ_e653fc28a7e447a598350f572051adc0.webp',
   descripcion: 'Minivan eficiente y funcional para familias.',
   marca: 'Suzuki'
 },
@@ -577,7 +577,7 @@ export class AutosComponent {
   precio: 26000,
   lanzamiento: 2023,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/VAAqM/s1/2022-suzuki-xl7.jpg',
+  imagen: 'https://cloud.jpnn.com/photo/arsip/normal/2023/06/16/profil-suzuki-xl7-hybrid-foto-ridho-3g5dy-9vpj.jpg',
   descripcion: 'SUV moderno, ideal para familia y aventura.',
   marca: 'Suzuki'
 },
@@ -587,7 +587,7 @@ export class AutosComponent {
   precio: 27000,
   lanzamiento: 2024,
   tipo: 'Sedán',
-  imagen: 'https://cdn.motor1.com/images/mgl/8VV0b/s1/2022-volkswagen-jetta.jpg',
+  imagen: 'https://carsfrenzy.net/wp-content/uploads/2023/05/2024-VW-Jetta-Design.jpg',
   descripcion: 'Elegancia y tecnología en un sedán clásico.',
   marca: 'Volkswagen'
 },
@@ -597,7 +597,7 @@ export class AutosComponent {
   precio: 22000,
   lanzamiento: 2023,
   tipo: 'Hatchback',
-  imagen: 'https://cdn.motor1.com/images/mgl/2qqPg/s1/2022-volkswagen-polo.jpg',
+  imagen: 'https://th.bing.com/th/id/R.67f66fc18e9c57b499449c42224509b4?rik=l%2bcvxdihPWSFsg&pid=ImgRaw&r=0',
   descripcion: 'Compacto, eficiente y dinámico.',
   marca: 'Volkswagen'
 },
@@ -607,7 +607,7 @@ export class AutosComponent {
   precio: 35000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/LZJYK/s1/2022-volkswagen-tiguan.jpg',
+  imagen: 'https://tse1.mm.bing.net/th/id/OIP.-pfgfGCOXN61rC1m3yIoyAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
   descripcion: 'SUV familiar con diseño premium.',
   marca: 'Volkswagen'
 },
@@ -617,7 +617,7 @@ export class AutosComponent {
   precio: 32000,
   lanzamiento: 2023,
   tipo: 'Sedán',
-  imagen: 'https://cdn.motor1.com/images/mgl/0ANoY/s1/2021-volkswagen-passat.jpg',
+  imagen: 'https://cdn.motor1.com/images/mgl/lYMx1/s1/vw-passat-facelift-2019.jpg',
   descripcion: 'Confort y elegancia para viajes largos.',
   marca: 'Volkswagen'
 },
@@ -627,7 +627,7 @@ export class AutosComponent {
   precio: 45000,
   lanzamiento: 2024,
   tipo: 'Coupé',
-  imagen: 'https://cdn.motor1.com/images/mgl/2ooNN/s1/2022-volkswagen-arteon.jpg',
+  imagen: 'https://daxstreet.com/wp-content/uploads/2023/09/2024-Volkswagen-Arteon-1.jpg',
   descripcion: 'Diseño deportivo y sofisticado.',
   marca: 'Volkswagen'
 },
@@ -637,7 +637,7 @@ export class AutosComponent {
   precio: 30000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/9kkE6/s1/2022-volkswagen-taos.jpg',
+  imagen: 'https://fotos.perfil.com/2021/06/02/volkswagen-taos-1183537.jpg',
   descripcion: 'Compacto, tecnológico y versátil.',
   marca: 'Volkswagen'
 },
@@ -647,7 +647,7 @@ export class AutosComponent {
   precio: 29000,
   lanzamiento: 2023,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/L2rV8/s1/2023-volkswagen-t-cross.jpg',
+  imagen: 'https://www.topgear.com/sites/default/files/cars-car/carousel/2019/03/db2019au00235.jpg',
   descripcion: 'SUV juvenil con gran estilo.',
   marca: 'Volkswagen'
 },
@@ -657,7 +657,7 @@ export class AutosComponent {
   precio: 50000,
   lanzamiento: 2024,
   tipo: 'SUV Eléctrico',
-  imagen: 'https://cdn.motor1.com/images/mgl/lAAem/s1/2023-volkswagen-id4.jpg',
+  imagen: 'https://images.drive.com.au/driveau/image/upload/t_wp-default/v1/cms/uploads/ahcbqvdrfhptm3fcpcbi',
   descripcion: 'SUV 100% eléctrico, moderno y sustentable.',
   marca: 'Volkswagen'
 },
@@ -667,7 +667,7 @@ export class AutosComponent {
   precio: 46000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/yM99B/s1/2020-mitsubishi-montero-sport.jpg',
+  imagen: 'https://visor.ph/wp-content/uploads/2024/03/Check-out-the-facelifted-Mitsubishi-Montero-Sport-for-2024-2.jpg',
   descripcion: 'SUV resistente con capacidades off-road.',
   marca: 'Mitsubishi'
 },
@@ -677,7 +677,7 @@ export class AutosComponent {
   precio: 39000,
   lanzamiento: 2024,
   tipo: 'Pickup',
-  imagen: 'https://cdn.motor1.com/images/mgl/7zzGz/s1/mitsubishi-l200-2024.jpg',
+  imagen: 'https://cdn.motor1.com/images/mgl/MkJ24p/s3/2024-mitsubishi-triton-l200.jpg',
   descripcion: 'Pickup poderosa y confiable para el trabajo.',
   marca: 'Mitsubishi'
 },
@@ -687,7 +687,7 @@ export class AutosComponent {
   precio: 15000,
   lanzamiento: 2023,
   tipo: 'Hatchback',
-  imagen: 'https://cdn.motor1.com/images/mgl/L2rrX/s1/2022-mitsubishi-mirage.jpg',
+  imagen: 'https://tse1.mm.bing.net/th/id/OIP.ca9JeibQ4A4YL_ul2gPc9gHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3',
   descripcion: 'Compacto, económico y perfecto para ciudad.',
   marca: 'Mitsubishi'
 },
@@ -697,7 +697,7 @@ export class AutosComponent {
   precio: 33000,
   lanzamiento: 2024,
   tipo: 'SUV',
-  imagen: 'https://cdn.motor1.com/images/mgl/6XK9E/s1/2023-mitsubishi-eclipse-cross.jpg',
+  imagen: 'https://cdn.autopapo.com.br/box/uploads/2023/08/14184958/mitsubish-eclipse-cross-sport-2024-branco-fuji-frente-parado.jpg',
   descripcion: 'SUV con diseño deportivo y eficiente.',
   marca: 'Mitsubishi'
 },
@@ -707,7 +707,7 @@ export class AutosComponent {
   precio: 31000,
   lanzamiento: 2023,
   tipo: 'SUV Compacto',
-  imagen: 'https://cdn.motor1.com/images/mgl/73Jym/s1/2023-mitsubishi-asx.jpg',
+  imagen: 'https://images.carexpert.com.au/crop/1200/630/app/uploads/2023/06/2023-Mitsubishi-ASX-ES-_HERO-16x9-1.jpg',
   descripcion: 'SUV compacto con buen rendimiento urbano.',
   marca: 'Mitsubishi'
 },
@@ -717,7 +717,7 @@ export class AutosComponent {
   precio: 47000,
   lanzamiento: 2024,
   tipo: 'SUV Híbrido',
-  imagen: 'https://cdn.motor1.com/images/mgl/WqqvN/s1/2023-mitsubishi-outlander-phev.jpg',
+  imagen: 'https://www.motortrend.com/uploads/2022/12/Mitsubishi-Outlander-PHEV-27.png',
   descripcion: 'SUV híbrido con gran autonomía eléctrica.',
   marca: 'Mitsubishi'
 },
@@ -727,7 +727,7 @@ export class AutosComponent {
   precio: 16000,
   lanzamiento: 2023,
   tipo: 'Hatchback',
-  imagen: 'https://cdn.motor1.com/images/mgl/gqqqP/s1/2022-mitsubishi-space-star.jpg',
+  imagen: 'https://autorai.nl/wp-content/uploads/2023/02/mitsubishi-space-star-goedkoopste-auto-van-nederland-2023-review-foto29.jpg',
   descripcion: 'Pequeño, eficiente y maniobrable.',
   marca: 'Mitsubishi'
 },
@@ -737,7 +737,7 @@ export class AutosComponent {
   precio: 28000,
   lanzamiento: 2024,
   tipo: 'MPV',
-  imagen: 'https://cdn.motor1.com/images/mgl/8ooLz/s1/2022-mitsubishi-xpander.jpg',
+  imagen: 'https://img.philkotse.com/2024/02/02/O3IWXvly/1-0ac2_wm.png',
   descripcion: 'Vehículo familiar con diseño moderno y amplio espacio.',
   marca: 'Mitsubishi'
 }
