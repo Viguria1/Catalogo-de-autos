@@ -1,46 +1,78 @@
 .inicio-contenedor {
-  position: relative;
   width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* alinea arriba */
-  align-items: center;
-  padding-top: 80px; /* sube el texto */
-  color: white;
+  min-height: 100vh;
+  padding: 40px 20px 80px; /* espacio inferior para contacto */
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: white;
+  position: relative;
   background-image: url('https://img.freepik.com/foto-gratis/conduccion-nocturna_23-2151955605.jpg?semt=ais_hybrid&w=740');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
-/* Capa oscura encima de la imagen */
+
+/* Capa oscura */
 .inicio-contenedor::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
-/* Texto encima de la capa oscura */
-.inicio-contenedor h1,
-.inicio-contenedor p {
+/* Todos los elementos encima del fondo */
+.inicio-contenedor > * {
   position: relative;
   z-index: 2;
 }
 
-h1 {
-  font-size: 3rem;
+.titulo-principal {
+  font-size: 2.8rem;
   margin-bottom: 10px;
 }
 
-p {
+.subtitulo {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.marcas-disponibles {
   font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.marcas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.autos-imagen {
+  margin-bottom: 80px; /* espacio para contacto fijo */
+}
+
+.img-autos {
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+}
+
+/* Contacto fijo abajo del todo */
+.contacto-fijo {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 1.1rem;
+  z-index: 20;
+  text-shadow: 1px 1px 4px black;
 }
