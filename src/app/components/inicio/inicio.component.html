@@ -1,3 +1,10 @@
+<!-- Botones de Acceso y Registro en la esquina superior derecha -->
+<div class="auth-botones">
+  <button (click)="mostrarLogin()">Acceso</button>
+  <button (click)="mostrarRegistro()">Registrarse</button>
+</div>
+
+<!-- Contenido principal -->
 <div class="inicio-contenedor">
   <h1 class="titulo-principal">BIENVENIDO AL CATÁLOGO DE AUTOS</h1>
   <p class="subtitulo">Explora los modelos, tipos y años de tus marcas favoritas</p>
@@ -13,7 +20,7 @@
   </div>
 
   <div class="autos-imagen">
-    <img src="assets/autos.png" alt="autos" class="img-autos">
+    <!-- Aquí podrías agregar imágenes de autos si deseas -->
   </div>
 
   <!-- Contacto abajo pegado -->
@@ -22,4 +29,20 @@
     <span>💬 WHATSAPP: 956248247</span>
     <span>📍 UBICACIÓN: ANDAHUAYLAS</span>
   </div>
+</div>
+
+<!-- Modal de Login o Registro -->
+<div class="login-contenedor" [class.active]="modalActivo">
+  <form class="login-formulario" (submit)="cerrarLogin($event)">
+    <h2 class="login-titulo">{{ esRegistro ? 'Registrarse' : 'Iniciar Sesión' }}</h2>
+    <input type="text" placeholder="Usuario o correo" required>
+    <input type="password" placeholder="Contraseña" required>
+
+    <ng-container *ngIf="esRegistro">
+      <input type="password" placeholder="Confirmar contraseña" required>
+    </ng-container>
+
+    <button type="submit">{{ esRegistro ? 'Registrarse' : 'Iniciar sesión' }}</button>
+    <button type="button" class="cancelar" (click)="cerrarLogin($event)">Cancelar</button>
+  </form>
 </div>
