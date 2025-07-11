@@ -8,12 +8,13 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 const firebaseConfig = {
-  apiKey: 'TU_API_KEY',
-  authDomain: 'TU_PROJECT.firebaseapp.com',
-  projectId: 'TU_PROJECT',
-  storageBucket: 'TU_PROJECT.appspot.com',
-  messagingSenderId: 'XXXXXXX',
-  appId: 'XXXXXXXXX',
+  apiKey: 'AIzaSyAspDLps0k05VNHv0eeq5ywm7NvAVKJkPQ',
+  authDomain: 'catalogo-autos-1f83b.firebaseapp.com',
+  projectId: 'catalogo-autos-1f83b',
+  storageBucket: 'catalogo-autos-1f83b.appspot.com',
+  messagingSenderId: '120828881820',
+  appId: '1:120828881820:web:745c5b024abac10f637659',
+  measurementId: 'G-ZWV5DN07DN'
 };
 
 bootstrapApplication(AppComponent, {

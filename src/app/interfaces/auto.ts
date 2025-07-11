@@ -1,10 +1,10 @@
 export interface Auto {
-  id?: string;             // Opcional: útil para Firestore
-  marca: string;
+  id?: string;
   modelo: string;
+  marca: string;
+  precio: number;
+  lanzamiento: number;
   tipo: string;
-  año: number;
   imagen: string;
-  precio?: number;         // Opcional: no todos los autos podrían tener precio definido
-  lanzamiento?: number;    // Opcional: para usar en otros componentes si aplica
+  descripcion?: string;
 }
