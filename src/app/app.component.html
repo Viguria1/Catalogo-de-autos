@@ -1,9 +1,13 @@
-<nav class="nav">
-  <a routerLink="/" routerLinkActive="active" class="nav-link">Inicio</a>
-  <a routerLink="/autos" routerLinkActive="active" class="nav-link">Autos</a>
-  <a routerLink="/nuevos" routerLinkActive="active" class="nav-link">Nuevos</a>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a routerLink="/" class="navbar-title">Catálogo de Autos</a>
+  </div>
+  <ul class="navbar-links">
+    <li><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/autos">Autos</a></li>
+    <li><a routerLink="/nuevos">Nuevos</a></li>
+    <li><a routerLink="/sobre-nosotros">Sobre Nosotros</a></li>
+  </ul>
 </nav>
 
-<main class="main-content">
-  <router-outlet></router-outlet>
-</main>
+<router-outlet></router-outlet>

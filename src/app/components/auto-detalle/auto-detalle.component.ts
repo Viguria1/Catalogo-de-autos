@@ -22,8 +22,12 @@ export class AutoDetalleComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.autosService.obtenerAutoPorId(id).subscribe((data: Auto) => {
-        this.auto = data;
+      this.autosService.obtenerAutoPorId(id).subscribe((data) => {
+        if (data) {
+          this.auto = data;
+        } else {
+          console.error('Auto no encontrado');
+        }
       });
     }
   }

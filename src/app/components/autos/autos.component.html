@@ -1,70 +1,62 @@
-<!-- Sección completa con fondo: título + logos -->
-<div class="catalogo-header">
-  <h2>Catálogo de Autos</h2>
+<div class="container mt-5">
+  <h2 class="text-center mb-4 text-uppercase fw-bold">Explora tus marcas favoritas</h2>
+  <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+    <div
+      *ngFor="let marca of marcas"
+      class="text-center"
+      role="button"
+      (click)="scrollTo(marca)"
+    >
+      <img [src]="obtenerLogoMarca(marca)" alt="{{ marca }}" width="80" height="80" class="rounded-circle border border-dark shadow-sm">
+      <p class="mt-2 fw-semibold">{{ marca }}</p>
+    </div>
+  </div>
 
-  <div class="autos-marcas">
-    <div class="marca-item" (click)="scrollTo('Toyota')">
-      <img src="https://tse4.mm.bing.net/th/id/OIP.dad2avjB26UafPCRcPgkDQHaED?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Toyota" />
-      <p>Toyota</p>
-    </div>
-    <div class="marca-item" (click)="scrollTo('Kia')">
-      <img src="https://www.pngarts.com/files/3/Kia-Motors-Logo-PNG-Image.png" alt="Kia" />
-      <p>Kia</p>
-    </div>
-    <div class="marca-item" (click)="scrollTo('Hyundai')">
-      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Hyundai-Logo.png" alt="Hyundai" />
-      <p>Hyundai</p>
-    </div>
-    <div class="marca-item" (click)="scrollTo('Nissan')">
-      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Nissan-Logo.png" alt="Nissan" />
-      <p>Nissan</p>
-    </div>
-    <div class="marca-item" (click)="scrollTo('Chevrolet')">
-      <img src="https://tse2.mm.bing.net/th/id/OIP.poXr0DmZDNsgHjzAfqRMPgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Chevrolet" />
-      <p>Chevrolet</p>
-    </div>
-    <div class="marca-item" (click)="scrollTo('Suzuki')">
-      <img src="https://1000marcas.net/wp-content/uploads/2020/01/Suzuki-Logo.png" alt="Suzuki" />
-      <p>Suzuki</p>
-    </div>
-    <div class="marca-item" (click)="scrollTo('Volkswagen')">
-      <img src="https://images.seeklogo.com/logo-png/15/1/volkswagen-logo-png_seeklogo-150527.png" alt="Volkswagen" />
-      <p>Volkswagen</p>
-    </div>
-    <div class="marca-item" (click)="scrollTo('Mitsubishi')">
-      <img src="https://freelogopng.com/images/all_img/1693317037mitsubishi-logo-png-black.png" alt="Mitsubishi" />
-      <p>Mitsubishi</p>
+  <div *ngFor="let marca of marcas" [attr.id]="marca" class="mb-5">
+    <h3 class="text-primary border-bottom pb-2 mb-3">{{ marca }}</h3>
+    <div class="row g-4">
+      <div
+        class="col-sm-6 col-md-4 col-lg-3"
+        *ngFor="let auto of getAutosPorMarca(marca)"
+      >
+        <div class="card h-100 shadow-sm border-0" (click)="abrirDetalle(auto)" style="cursor: pointer;">
+          <img [src]="auto.imagen" class="card-img-top rounded" alt="{{ auto.modelo }}" style="height: 180px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{ auto.modelo }}</h5>
+            <p class="card-text mb-1"><strong>Tipo:</strong> {{ auto.tipo }}</p>
+            <p class="card-text mb-1"><strong>Lanzamiento:</strong> {{ auto.lanzamiento }}</p>
+            <p class="card-text text-success fw-semibold"><strong>Precio:</strong> {{ auto.precio | currency:'USD' }}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Secciones por marca -->
-<div *ngFor="let marca of marcas">
-  <h3 id="{{ marca }}">{{ marca }}</h3>
-  <div class="autos-grid">
-    <div class="auto-card" *ngFor="let auto of getAutosPorMarca(marca)" (click)="abrirDetalle(auto)">
-      <img [src]="auto.imagen" [alt]="auto.modelo" />
-      <h4>{{ auto.modelo }}</h4>
-      <p><strong>Precio:</strong> {{ auto.precio | currency }}</p>
-      <p><strong>Año:</strong> {{ auto.lanzamiento }}</p>
-      <p><strong>Tipo:</strong> {{ auto.tipo }}</p>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal" *ngIf="autoSeleccionado">
-  <div class="modal-content">
-    <span class="close" (click)="cerrarDetalle()">&times;</span>
-    <div class="modal-flex">
-      <img [src]="autoSeleccionado.imagen" [alt]="autoSeleccionado.modelo" />
-      <div class="modal-info">
-        <h2>{{ autoSeleccionado.modelo }}</h2>
-        <p><strong>Marca:</strong> {{ autoSeleccionado.marca }}</p>
-        <p><strong>Precio:</strong> {{ autoSeleccionado.precio | currency }}</p>
-        <p><strong>Año de lanzamiento:</strong> {{ autoSeleccionado.lanzamiento }}</p>
-        <p><strong>Tipo:</strong> {{ autoSeleccionado.tipo }}</p>
-        <p>{{ autoSeleccionado.descripcion }}</p>
+<!-- Modal Detalle -->
+<div
+  class="modal fade show"
+  tabindex="-1"
+  [ngClass]="{ 'd-block bg-dark bg-opacity-75': autoSeleccionado }"
+  *ngIf="autoSeleccionado"
+  (click)="cerrarDetalle()"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ autoSeleccionado.modelo }}</h5>
+        <button type="button" class="btn-close" (click)="cerrarDetalle()"></button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-md-6">
+          <img [src]="autoSeleccionado.imagen" class="img-fluid rounded" alt="{{ autoSeleccionado.modelo }}">
+        </div>
+        <div class="col-md-6">
+          <p><strong>Marca:</strong> {{ autoSeleccionado.marca }}</p>
+          <p><strong>Tipo:</strong> {{ autoSeleccionado.tipo }}</p>
+          <p><strong>Año:</strong> {{ autoSeleccionado.lanzamiento }}</p>
+          <p><strong>Precio:</strong> {{ autoSeleccionado.precio | currency:'USD' }}</p>
+        </div>
       </div>
     </div>
   </div>

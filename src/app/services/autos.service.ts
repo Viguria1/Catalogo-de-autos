@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, collectionData, doc, docData } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { collection, collectionData, doc, docData, Firestore } from '@angular/fire/firestore';
 import { Auto } from '../interfaces/auto';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class AutosService {
   constructor(private firestore: Firestore) {}
 
@@ -12,8 +15,10 @@ export class AutosService {
     return collectionData(autosRef, { idField: 'id' }) as Observable<Auto[]>;
   }
 
-  obtenerAutoPorId(id: string): Observable<Auto> {
-    const autoRef = doc(this.firestore, `autos/${id}`);
-    return docData(autoRef, { idField: 'id' }) as Observable<Auto>;
+  obtenerAutoPorId(id: string): Observable<Auto | undefined> {
+    const autoRef = doc(this.firestore, 'autos', id);
+    return docData(autoRef).pipe(
+      map(data => ({ id, ...data } as Auto))
+    );
   }
 }
