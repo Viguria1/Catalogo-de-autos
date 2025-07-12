@@ -1,8 +1,4 @@
 <!-- Botones de Acceso y Registro en la esquina superior derecha -->
-<div class="auth-botones">
-  <button (click)="mostrarLogin()">Acceso</button>
-  <button (click)="mostrarRegistro()">Registrarse</button>
-</div>
 
 <!-- Contenido principal -->
 <div class="inicio-contenedor">
@@ -31,18 +27,3 @@
   </div>
 </div>
 
-<!-- Modal de Login o Registro -->
-<div class="login-contenedor" [class.active]="modalActivo">
-  <form class="login-formulario" (submit)="cerrarLogin($event)">
-    <h2 class="login-titulo">{{ esRegistro ? 'Registrarse' : 'Iniciar Sesión' }}</h2>
-    <input type="text" placeholder="Usuario o correo" required>
-    <input type="password" placeholder="Contraseña" required>
-
-    <ng-container *ngIf="esRegistro">
-      <input type="password" placeholder="Confirmar contraseña" required>
-    </ng-container>
-
-    <button type="submit">{{ esRegistro ? 'Registrarse' : 'Iniciar sesión' }}</button>
-    <button type="button" class="cancelar" (click)="cerrarLogin($event)">Cancelar</button>
-  </form>
-</div>
