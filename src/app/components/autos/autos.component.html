@@ -1,5 +1,15 @@
 <div class="container">
 
+  <!-- Buscador -->
+  <div class="buscador-container">
+    <input
+      type="text"
+      [(ngModel)]="terminoBusqueda"
+      placeholder="🔍 Buscar por modelo o marca..."
+      class="buscador-input"
+    />
+  </div>
+
   <!-- Sección con fondo + logos -->
   <div class="logos-con-fondo">
     <img
@@ -20,23 +30,25 @@
 
   <!-- Lista de autos por marca -->
   <div *ngFor="let marca of marcas">
-    <h2 id="{{ marca }}">{{ marca }}</h2>
+    <ng-container *ngIf="hayAutosFiltrados(marca)">
+      <h2 id="{{ marca }}">{{ marca }}</h2>
 
-    <div class="autos-grid">
-      <div
-        class="auto-card"
-        *ngFor="let auto of getAutosPorMarca(marca)"
-        (click)="abrirDetalle(auto)"
-      >
-        <img [src]="auto.imagen" [alt]="auto.modelo" />
-        <div class="auto-info">
-          <h5>{{ auto.modelo }}</h5>
-          <p>Tipo: {{ auto.tipo }}</p>
-          <p>Año: {{ auto.lanzamiento }}</p>
-          <p class="precio">{{ auto.precio | currency: 'USD' }}</p>
+      <div class="autos-grid">
+        <div
+          class="auto-card"
+          *ngFor="let auto of getAutosFiltradosPorMarca(marca)"
+          (click)="abrirDetalle(auto)"
+        >
+          <img [src]="auto.imagen" [alt]="auto.modelo" />
+          <div class="auto-info">
+            <h5>{{ auto.modelo }}</h5>
+            <p>Tipo: {{ auto.tipo }}</p>
+            <p>Año: {{ auto.lanzamiento }}</p>
+            <p class="precio">{{ auto.precio | currency: 'USD' }}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 
   <!-- Detalle modal -->
@@ -47,15 +59,15 @@
   >
     <div class="modal-contenido" (click)="$event.stopPropagation()">
       <img
-        [src]="autoSeleccionado?.imagen"
-        [alt]="autoSeleccionado?.modelo"
+        [src]="autoSeleccionado.imagen"
+        [alt]="autoSeleccionado.modelo"
         class="img-fluid"
       />
-      <h3>{{ autoSeleccionado?.modelo }}</h3>
-      <p><strong>Marca:</strong> {{ autoSeleccionado?.marca }}</p>
-      <p><strong>Tipo:</strong> {{ autoSeleccionado?.tipo }}</p>
-      <p><strong>Año:</strong> {{ autoSeleccionado?.lanzamiento }}</p>
-      <p><strong>Precio:</strong> {{ autoSeleccionado?.precio | currency: 'USD' }}</p>
+      <h3>{{ autoSeleccionado.modelo }}</h3>
+      <p><strong>Marca:</strong> {{ autoSeleccionado.marca }}</p>
+      <p><strong>Tipo:</strong> {{ autoSeleccionado.tipo }}</p>
+      <p><strong>Año:</strong> {{ autoSeleccionado.lanzamiento }}</p>
+      <p><strong>Precio:</strong> {{ autoSeleccionado.precio | currency: 'USD' }}</p>
       <button (click)="cerrarDetalle()">Cerrar</button>
     </div>
   </div>

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { AutosService } from '../../services/autos.service';
 import { Auto } from '../../interfaces/auto';
 
 @Component({
   selector: 'app-autos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   providers: [AutosService],
   templateUrl: './autos.component.html',
   styleUrls: ['./autos.component.css']
@@ -15,19 +16,28 @@ export class AutosComponent implements OnInit {
   autos: Auto[] = [];
   marcas: string[] = [];
   autoSeleccionado?: Auto;
+  terminoBusqueda: string = '';
 
   constructor(private autosService: AutosService) {}
 
   ngOnInit() {
     this.autosService.obtenerAutos().subscribe((data: Auto[]) => {
-      console.log('Autos desde Firebase:', data);
       this.autos = data;
       this.marcas = [...new Set(data.map(auto => auto.marca))];
     });
   }
 
-  getAutosPorMarca(marca: string): Auto[] {
-    return this.autos.filter(auto => auto.marca === marca);
+  getAutosFiltradosPorMarca(marca: string): Auto[] {
+    const termino = this.terminoBusqueda.trim().toLowerCase();
+    return this.autos.filter(auto =>
+      auto.marca === marca &&
+      (termino === '' ||
+        (auto.modelo + ' ' + auto.marca).toLowerCase().includes(termino))
+    );
+  }
+
+  hayAutosFiltrados(marca: string): boolean {
+    return this.getAutosFiltradosPorMarca(marca).length > 0;
   }
 
   scrollTo(marca: string) {
