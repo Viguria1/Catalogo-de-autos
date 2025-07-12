@@ -1,6 +1,24 @@
-<!-- Botones de Acceso y Registro en la esquina superior derecha -->
+<!-- CABECERA -->
+<header class="encabezado">
+  <h1 class="titulo">Catálogo de Autos</h1>
 
-<!-- Contenido principal -->
+  <!-- NAV solo si está autenticado -->
+  <nav *ngIf="estaAutenticado" class="menu-navegacion">
+    <a routerLink="/inicio">Inicio</a>
+    <a routerLink="/autos">Autos</a>
+    <a routerLink="/nuevos">Nuevos</a>
+    <a routerLink="/sobre-nosotros">Sobre Nosotros</a>
+    <button (click)="cerrarSesion()">Cerrar Sesión</button>
+  </nav>
+
+  <!-- Botones si NO está autenticado -->
+  <div class="auth-botones" *ngIf="!estaAutenticado">
+    <button (click)="mostrarLogin()">Acceder</button>
+    <button (click)="mostrarRegistro()">Registrarse</button>
+  </div>
+</header>
+
+<!-- CONTENIDO PRINCIPAL -->
 <div class="inicio-contenedor">
   <h1 class="titulo-principal">BIENVENIDO AL CATÁLOGO DE AUTOS</h1>
   <p class="subtitulo">Explora los modelos, tipos y años de tus marcas favoritas</p>
@@ -16,10 +34,10 @@
   </div>
 
   <div class="autos-imagen">
-    <!-- Aquí podrías agregar imágenes de autos si deseas -->
+    <!-- Puedes añadir imágenes de autos aquí si deseas -->
   </div>
 
-  <!-- Contacto abajo pegado -->
+  <!-- CONTACTO FIJO -->
   <div class="contacto-fijo">
     <span>📞 TELÉFONO: 956248247</span>
     <span>💬 WHATSAPP: 956248247</span>
@@ -27,3 +45,17 @@
   </div>
 </div>
 
+<!-- MODAL LOGIN / REGISTRO -->
+<div class="login-contenedor" [ngClass]="{ 'active': modalActivo }">
+  <form class="login-formulario" (submit)="cerrarLogin($event)">
+    <h2 class="login-titulo">{{ esRegistro ? 'Registrarse' : 'Acceder' }}</h2>
+
+    <input [(ngModel)]="email" name="email" type="email" placeholder="Correo electrónico" required />
+    <input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" required />
+
+    <div *ngIf="error" style="color: red; font-size: 0.9rem;">{{ error }}</div>
+
+    <button type="submit">{{ esRegistro ? 'Registrar' : 'Entrar' }}</button>
+    <button class="cancelar" (click)="cancelarLogin($event)">Cancelar</button>
+  </form>
+</div>
