@@ -22,8 +22,8 @@ export class AutosComponent implements OnInit {
 
   ngOnInit() {
     this.autosService.obtenerAutos().subscribe((data: Auto[]) => {
-      this.autos = data;
-      this.marcas = [...new Set(data.map(auto => auto.marca))];
+      this.autos = data.filter(auto => auto.marca && auto.modelo && auto.imagen);
+      this.marcas = [...new Set(this.autos.map(auto => auto.marca))];
     });
   }
 

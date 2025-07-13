@@ -1,12 +1,49 @@
-<h2>Autos Nuevos</h2>
-<div *ngIf="nuevos.length > 0; else sinNuevos">
-  <ul>
-    <li *ngFor="let auto of nuevos">
-      {{ auto.modelo }} - {{ auto.lanzamiento }}
-    </li>
-  </ul>
-</div>
+<div class="container">
 
-<ng-template #sinNuevos>
-  <p>No hay autos nuevos este año.</p>
-</ng-template>
+  <h2 class="text-center my-4">Autos Nuevos</h2>
+
+  <!-- Filtro por marca -->
+  <div class="filtro-marca">
+    <label>Filtrar por marca:</label>
+    <select [(ngModel)]="marcaFiltro">
+      <option value="">Todas</option>
+      <option *ngFor="let marca of obtenerMarcas()" [value]="marca">{{ marca }}</option>
+    </select>
+  </div>
+
+  <!-- Tarjetas con animación -->
+  <div class="autos-grid">
+    <div
+      class="auto-card animate"
+      *ngFor="let auto of obtenerNuevosFiltrados()"
+      (click)="abrirDetalle(auto)"
+    >
+      <img [src]="auto.imagen" alt="{{ auto.modelo }}">
+      <div class="auto-info">
+        <h5>{{ auto.modelo }}</h5>
+        <p>{{ auto.marca }} - {{ auto.lanzamiento }}</p>
+        <p class="precio">{{ auto.precio | currency: 'USD' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-3">
+    <button (click)="mostrarTodos = !mostrarTodos" class="btn btn-primary">
+      {{ mostrarTodos ? 'Ver menos' : 'Ver más' }}
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="autoSeleccionado" (click)="cerrarDetalle()">
+    <div class="modal-contenido" (click)="$event.stopPropagation()">
+      <img [src]="autoSeleccionado.imagen" alt="{{ autoSeleccionado.modelo }}" class="img-fluid mb-3">
+      <h3>{{ autoSeleccionado.modelo }}</h3>
+      <p><strong>Marca:</strong> {{ autoSeleccionado.marca }}</p>
+      <p><strong>Tipo:</strong> {{ autoSeleccionado.tipo }}</p>
+      <p><strong>Año:</strong> {{ autoSeleccionado.lanzamiento }}</p>
+      <p><strong>Precio:</strong> {{ autoSeleccionado.precio | currency: 'USD' }}</p>
+      <button (click)="cerrarDetalle()" class="btn btn-danger mt-3">Cerrar</button>
+    </div>
+  </div>
+
+</div>
