@@ -1,0 +1,85 @@
+<div class="container my-5">
+  <h2 class="mb-4 text-center"> Registrar nuevo auto</h2>
+
+  <form [formGroup]="autoForm" (ngSubmit)="agregarAuto()" class="formulario-auto">
+
+    <!-- Modelo -->
+    <div class="mb-3">
+      <label for="modelo" class="form-label">Modelo</label>
+      <input type="text" id="modelo" formControlName="modelo" class="form-control" placeholder="Ej: Corolla, Sentra" />
+      <div class="text-danger" *ngIf="autoForm.get('modelo')?.touched && autoForm.get('modelo')?.invalid">
+        <small *ngIf="autoForm.get('modelo')?.errors?.['required']">⚠️ El modelo es obligatorio.</small>
+        <small *ngIf="autoForm.get('modelo')?.errors?.['minlength']">⚠️ Mínimo 3 caracteres.</small>
+        <small *ngIf="autoForm.get('modelo')?.errors?.['modeloProhibido']">⚠️ Modelo no válido.</small>
+      </div>
+    </div>
+
+    <!-- Marca -->
+    <div class="mb-3">
+      <label for="marca" class="form-label">Marca</label>
+      <select id="marca" formControlName="marca" class="form-select">
+        <option value="">Selecciona una marca</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Kia">Kia</option>
+        <option value="Hyundai">Hyundai</option>
+        <option value="Nissan">Nissan</option>
+        <option value="Chevrolet">Chevrolet</option>
+        <option value="Suzuki">Suzuki</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Mitsubishi">Mitsubishi</option>
+      </select>
+      <div class="text-danger" *ngIf="autoForm.get('marca')?.touched && autoForm.get('marca')?.invalid">
+        <small>⚠️ La marca es obligatoria.</small>
+      </div>
+    </div>
+
+    <!-- Tipo -->
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo</label>
+      <input type="text" id="tipo" formControlName="tipo" class="form-control" placeholder="Ej: SUV, Sedán, Hatchback" />
+      <div class="text-danger" *ngIf="autoForm.get('tipo')?.touched && autoForm.get('tipo')?.invalid">
+        <small>⚠️ El tipo es obligatorio.</small>
+      </div>
+    </div>
+
+    <!-- Año de lanzamiento -->
+    <div class="mb-3">
+      <label for="lanzamiento" class="form-label">Año de lanzamiento</label>
+      <input type="number" id="lanzamiento" formControlName="lanzamiento" class="form-control" />
+      <div class="text-danger" *ngIf="autoForm.get('lanzamiento')?.touched && autoForm.get('lanzamiento')?.invalid">
+        <small *ngIf="autoForm.get('lanzamiento')?.errors?.['required']">⚠️ El año es obligatorio.</small>
+        <small *ngIf="autoForm.get('lanzamiento')?.errors?.['min']">⚠️ No menor a 2000.</small>
+        <small *ngIf="autoForm.get('lanzamiento')?.errors?.['max']">⚠️ No puede ser mayor al año actual.</small>
+      </div>
+    </div>
+
+    <!-- Precio -->
+    <div class="mb-3">
+      <label for="precio" class="form-label">Precio (USD)</label>
+      <input type="number" id="precio" formControlName="precio" class="form-control" />
+      <div class="text-danger" *ngIf="autoForm.get('precio')?.touched && autoForm.get('precio')?.invalid">
+        <small *ngIf="autoForm.get('precio')?.errors?.['required']">⚠️ El precio es obligatorio.</small>
+        <small *ngIf="autoForm.get('precio')?.errors?.['min']">⚠️ Precio mínimo: $5000.</small>
+        <small *ngIf="autoForm.get('precio')?.errors?.['max']">⚠️ Precio máximo: $200,000.</small>
+      </div>
+    </div>
+
+    <!-- Imagen -->
+    <div class="mb-3">
+      <label for="imagen" class="form-label">URL de la imagen</label>
+      <input type="text" id="imagen" formControlName="imagen" class="form-control" placeholder="https://..." />
+      <div class="text-danger" *ngIf="autoForm.get('imagen')?.touched && autoForm.get('imagen')?.invalid">
+        <small *ngIf="autoForm.get('imagen')?.errors?.['required']">⚠️ La imagen es obligatoria.</small>
+        <small *ngIf="autoForm.get('imagen')?.errors?.['pattern']">⚠️ URL inválida o formato no permitido (jpg, png, webp).</small>
+      </div>
+    </div>
+
+    <!-- Botón -->
+    <button type="submit" class="btn btn-primary w-100">Agregar Auto</button>
+
+    <!-- Mensajes -->
+    <div *ngIf="mensaje" class="alert alert-success mt-3">{{ mensaje }}</div>
+    <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+
+  </form>
+</div>

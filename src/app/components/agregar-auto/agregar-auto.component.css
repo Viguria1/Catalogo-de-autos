@@ -1,0 +1,77 @@
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+h2 {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+label {
+  font-weight: 600;
+  color: #444;
+}
+
+input.form-control,
+select.form-select {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 0.6rem 1rem;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  outline: none;
+}
+
+.text-danger {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  color: #dc3545;
+}
+
+button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

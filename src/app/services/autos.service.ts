@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, doc, docData, Firestore } from '@angular/fire/firestore';
+import { collection, collectionData, doc, docData, addDoc, Firestore } from '@angular/fire/firestore';
 import { Auto } from '../interfaces/auto';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,6 +9,11 @@ import { map } from 'rxjs/operators';
 })
 export class AutosService {
   constructor(private firestore: Firestore) {}
+
+  agregarAuto(auto: Auto) {
+    const autosRef = collection(this.firestore, 'autos');
+    return addDoc(autosRef, auto);
+  }
 
   obtenerAutos(): Observable<Auto[]> {
     const autosRef = collection(this.firestore, 'autos');
