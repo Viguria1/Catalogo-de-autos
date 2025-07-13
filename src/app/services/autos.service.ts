@@ -1,5 +1,14 @@
 import { Injectable } from '@angular/core';
-import { collection, collectionData, doc, docData, addDoc, Firestore } from '@angular/fire/firestore';
+import {
+  collection,
+  collectionData,
+  doc,
+  docData,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+  Firestore
+} from '@angular/fire/firestore';
 import { Auto } from '../interfaces/auto';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -22,8 +31,16 @@ export class AutosService {
 
   obtenerAutoPorId(id: string): Observable<Auto | undefined> {
     const autoRef = doc(this.firestore, 'autos', id);
-    return docData(autoRef).pipe(
-      map(data => ({ id, ...data } as Auto))
-    );
+    return docData(autoRef).pipe(map(data => ({ id, ...data } as Auto)));
+  }
+
+  eliminarAuto(id: string) {
+    const autoRef = doc(this.firestore, 'autos', id);
+    return deleteDoc(autoRef);
+  }
+
+  editarAuto(id: string, auto: Partial<Auto>) {
+    const autoRef = doc(this.firestore, 'autos', id);
+    return updateDoc(autoRef, auto);
   }
 }

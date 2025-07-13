@@ -105,6 +105,7 @@ h2 {
     font-size: 1rem;
   }
 }
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -163,6 +164,7 @@ h2 {
 .modal-contenido button:hover {
   background-color: #0056b3;
 }
+
 .logos-con-fondo {
   position: relative;
   width: 100%;
@@ -194,6 +196,7 @@ h2 {
   height: 100%;
   padding: 1rem;
 }
+
 .inicio-hero {
   background-image: url('https://cdn.pixabay.com/photo/2017/03/27/13/20/auto-2179220_1280.jpg');
   background-size: cover;
@@ -224,15 +227,14 @@ h2 {
   margin-top: 15px;
   display: inline-block;
 }
-/* Estilo para el contenedor del buscador */
+
+/* Buscador */
 .buscador-container {
   display: flex;
   justify-content: center;
   margin: 30px auto;
   max-width: 600px;
 }
-
-/* Estilo para el input del buscador */
 .buscador-input {
   width: 100%;
   padding: 12px 20px;
@@ -243,9 +245,40 @@ h2 {
   outline: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-
-/* Estilo al enfocar el input */
 .buscador-input:focus {
   border-color: #007bff;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Admin Buttons */
+.admin-buttons button {
+  margin: 4px 6px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.admin-buttons .btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.admin-buttons .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.admin-buttons .btn-danger:hover {
+  background-color: #bb2d3b;
+}
+
+.admin-buttons .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Estilos para inputs en el modal edición */
+.modal-contenido input.form-control {
+  margin-bottom: 10px;
 }

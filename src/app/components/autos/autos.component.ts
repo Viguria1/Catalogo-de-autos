@@ -17,6 +17,10 @@ export class AutosComponent implements OnInit {
   marcas: string[] = [];
   autoSeleccionado?: Auto;
   terminoBusqueda: string = '';
+  modoAdmin: boolean = false;
+
+  autoEnEdicion?: Auto;
+  edicionActiva: boolean = false;
 
   constructor(private autosService: AutosService) {}
 
@@ -47,10 +51,57 @@ export class AutosComponent implements OnInit {
 
   abrirDetalle(auto: Auto) {
     this.autoSeleccionado = auto;
+    this.edicionActiva = false;
   }
 
   cerrarDetalle() {
     this.autoSeleccionado = undefined;
+    this.edicionActiva = false;
+    this.autoEnEdicion = undefined;
+  }
+
+  activarEdicion(auto: Auto) {
+    this.autoEnEdicion = { ...auto };
+    this.edicionActiva = true;
+  }
+
+  guardarEdicion() {
+    if (this.autoEnEdicion?.id) {
+      this.autosService.editarAuto(this.autoEnEdicion.id, this.autoEnEdicion)
+        .then(() => {
+          this.edicionActiva = false;
+          this.autoEnEdicion = undefined;
+          this.autoSeleccionado = undefined;
+          alert('Auto actualizado correctamente');
+        })
+        .catch((err: any) => {
+          console.error('Error al actualizar:', err);
+        });
+    }
+  }
+
+  eliminarAuto(id: string) {
+    if (confirm('¿Estás seguro de que deseas eliminar este auto?')) {
+      this.autosService.eliminarAuto(id).then(() => {
+        this.autos = this.autos.filter(a => a.id !== id);
+        console.log('Auto eliminado con éxito');
+      }).catch((err: any) => {
+        console.error('Error al eliminar:', err);
+      });
+    }
+  }
+
+  verificarPassword() {
+    if (this.modoAdmin) {
+      this.modoAdmin = false;
+    } else {
+      const clave = prompt('Ingrese la contraseña para modo administrador');
+      if (clave === '1234') {
+        this.modoAdmin = true;
+      } else {
+        alert('Contraseña incorrecta');
+      }
+    }
   }
 
   obtenerLogoMarca(marca: string): string {

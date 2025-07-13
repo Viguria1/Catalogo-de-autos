@@ -37,18 +37,34 @@
         <div
           class="auto-card"
           *ngFor="let auto of getAutosFiltradosPorMarca(marca)"
-          (click)="abrirDetalle(auto)"
         >
-          <img [src]="auto.imagen" [alt]="auto.modelo" />
+          <img
+            [src]="auto.imagen"
+            [alt]="auto.modelo"
+            (click)="abrirDetalle(auto)"
+          />
           <div class="auto-info">
             <h5>{{ auto.modelo }}</h5>
             <p>Tipo: {{ auto.tipo }}</p>
             <p>Año: {{ auto.lanzamiento }}</p>
             <p class="precio">{{ auto.precio | currency: 'USD' }}</p>
+
+            <!-- Botones modo administrador -->
+            <div *ngIf="modoAdmin" class="admin-buttons mt-2">
+              <button class="btn btn-sm btn-danger" (click)="eliminarAuto(auto.id!)">Eliminar</button>
+              <button class="btn btn-sm btn-secondary" (click)="abrirDetalle(auto); activarEdicion(auto)">Editar</button>
+            </div>
           </div>
         </div>
       </div>
     </ng-container>
+  </div>
+
+  <!-- Botón para activar modo admin (ahora al final) -->
+  <div class="text-center my-5">
+    <button class="btn btn-dark" (click)="verificarPassword()">
+      {{ modoAdmin ? 'Salir del modo administrador' : 'Modo administrador' }}
+    </button>
   </div>
 
   <!-- Detalle modal -->
@@ -58,17 +74,55 @@
     (click)="cerrarDetalle()"
   >
     <div class="modal-contenido" (click)="$event.stopPropagation()">
-      <img
-        [src]="autoSeleccionado.imagen"
-        [alt]="autoSeleccionado.modelo"
-        class="img-fluid"
-      />
-      <h3>{{ autoSeleccionado.modelo }}</h3>
-      <p><strong>Marca:</strong> {{ autoSeleccionado.marca }}</p>
-      <p><strong>Tipo:</strong> {{ autoSeleccionado.tipo }}</p>
-      <p><strong>Año:</strong> {{ autoSeleccionado.lanzamiento }}</p>
-      <p><strong>Precio:</strong> {{ autoSeleccionado.precio | currency: 'USD' }}</p>
-      <button (click)="cerrarDetalle()">Cerrar</button>
+
+      <!-- MODO EDICIÓN -->
+      <div *ngIf="edicionActiva && autoEnEdicion">
+        <h4>Editar Auto</h4>
+        <label>Modelo:</label>
+        <input class="form-control mb-2" [(ngModel)]="autoEnEdicion.modelo" />
+
+        <label>Marca:</label>
+        <input class="form-control mb-2" [(ngModel)]="autoEnEdicion.marca" />
+
+        <label>Tipo:</label>
+        <input class="form-control mb-2" [(ngModel)]="autoEnEdicion.tipo" />
+
+        <label>Lanzamiento:</label>
+        <input
+          type="number"
+          class="form-control mb-2"
+          [(ngModel)]="autoEnEdicion.lanzamiento"
+        />
+
+        <label>Precio:</label>
+        <input
+          type="number"
+          class="form-control mb-2"
+          [(ngModel)]="autoEnEdicion.precio"
+        />
+
+        <label>Imagen (URL):</label>
+        <input class="form-control mb-3" [(ngModel)]="autoEnEdicion.imagen" />
+
+        <button class="btn btn-success me-2" (click)="guardarEdicion()">Guardar</button>
+        <button class="btn btn-outline-secondary" (click)="cerrarDetalle()">Cancelar</button>
+      </div>
+
+      <!-- MODO DETALLE -->
+      <div *ngIf="!edicionActiva">
+        <img
+          [src]="autoSeleccionado.imagen"
+          [alt]="autoSeleccionado.modelo"
+          class="img-fluid"
+        />
+        <h3>{{ autoSeleccionado.modelo }}</h3>
+        <p><strong>Marca:</strong> {{ autoSeleccionado.marca }}</p>
+        <p><strong>Tipo:</strong> {{ autoSeleccionado.tipo }}</p>
+        <p><strong>Año:</strong> {{ autoSeleccionado.lanzamiento }}</p>
+        <p><strong>Precio:</strong> {{ autoSeleccionado.precio | currency: 'USD' }}</p>
+        <button class="btn btn-outline-dark" (click)="cerrarDetalle()">Cerrar</button>
+      </div>
+
     </div>
   </div>
 
