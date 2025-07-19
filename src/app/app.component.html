@@ -1,17 +1,39 @@
+<div class="app-container">
+  <header class="navbar">
+    <div class="logo"> Catálogo de Autos</div>
 
-<nav class="navbar">
-  <div class="navbar-brand">
-    <a routerLink="/" class="navbar-title">Catálogo de Autos</a>
+    <nav class="nav-links" *ngIf="estaAutenticado">
+      <a routerLink="/inicio" routerLinkActive="activo">Inicio</a>
+      <a routerLink="/autos" routerLinkActive="activo">Autos</a>
+      <a routerLink="/nuevos" routerLinkActive="activo">Nuevos</a>
+      <a routerLink="/sobre-nosotros" routerLinkActive="activo">Sobre Nosotros</a>
+      <a routerLink="/agregar-auto" routerLinkActive="activo">Agregar Auto</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <button *ngIf="!estaAutenticado" (click)="mostrarLogin()" class="btn login">Acceder</button>
+      <button *ngIf="!estaAutenticado" (click)="mostrarRegistro()" class="btn register">Registrarse</button>
+      <button *ngIf="estaAutenticado" (click)="cerrarSesion()" class="btn logout">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <main class="contenido-principal">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Modal de login/registro -->
+  <div class="modal" *ngIf="modalActivo">
+    <div class="modal-contenido">
+      <h2>{{ esRegistro ? 'Registrarse' : 'Iniciar Sesión' }}</h2>
+      <form (submit)="cerrarLogin($event)">
+        <input [(ngModel)]="email" name="email" type="email" placeholder="Correo electrónico" required />
+        <input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" required />
+        <div class="acciones">
+          <button type="submit">{{ esRegistro ? 'Registrarse' : 'Acceder' }}</button>
+          <button type="button" (click)="cancelarLogin($event)">Cancelar</button>
+        </div>
+      </form>
+      <div class="error" *ngIf="error">{{ error }}</div>
+    </div>
   </div>
-  <ul class="navbar-links">
-    <li><a routerLink="/">Inicio</a></li>
-    <li><a routerLink="/autos">Autos</a></li>
-    <li><a routerLink="/nuevos">Nuevos</a></li>
-    <li><a routerLink="/sobre-nosotros">Sobre Nosotros</a></li>
-    <a routerLink="/agregar-auto" class="btn btn-success">Agregar Auto</a>
-
-  </ul>
-</nav>
-
-
-<router-outlet></router-outlet>
+</div>

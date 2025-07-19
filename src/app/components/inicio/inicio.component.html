@@ -1,61 +1,27 @@
-<!-- CABECERA -->
-<header class="encabezado">
-  <h1 class="titulo">Catálogo de Autos</h1>
-
-  <!-- NAV solo si está autenticado -->
-  <nav *ngIf="estaAutenticado" class="menu-navegacion">
-    <a routerLink="/inicio">Inicio</a>
-    <a routerLink="/autos">Autos</a>
-    <a routerLink="/nuevos">Nuevos</a>
-    <a routerLink="/sobre-nosotros">Sobre Nosotros</a>
-    <button (click)="cerrarSesion()">Cerrar Sesión</button>
-  </nav>
-
-  <!-- Botones si NO está autenticado -->
-  <div class="auth-botones" *ngIf="!estaAutenticado">
-    <button (click)="mostrarLogin()">Acceder</button>
-    <button (click)="mostrarRegistro()">Registrarse</button>
-  </div>
-</header>
-
-<!-- CONTENIDO PRINCIPAL -->
 <div class="inicio-contenedor">
-  <h1 class="titulo-principal">BIENVENIDO AL CATÁLOGO DE AUTOS</h1>
-  <p class="subtitulo">Explora los modelos, tipos y años de tus marcas favoritas</p>
+  <div class="contenido">
+    <h1 class="titulo-principal">BIENVENIDO AL CATÁLOGO DE AUTOS</h1>
+    <p class="subtitulo">Explora los modelos, tipos y años de tus marcas favoritas</p>
 
-  <h2 class="marcas-disponibles">MARCAS DISPONIBLES</h2>
-  <div class="marcas">
-    <span>TOYOTA</span>
-    <span>KIA</span>
-    <span>HYUNDAI</span>
-    <span>NISSAN</span>
-    <span>CHEVROLET</span>
-    <span>SUZUKI</span>
+    <h2 class="marcas-disponibles">Marcas Disponibles</h2>
+    <br>
+    <div class="marcas">
+      <span>🚗 Toyota</span>
+      <span>🚙 Kia</span>
+      <span>🚘 Hyundai</span>
+      <span>🚕 Nissan</span>
+      <span>🚗 Chevrolet</span>
+      <span>🚙 Suzuki</span>
+    </div>
+
+    <div></div>
+  <br>
+  <br>
+
+    <div class="contacto-fijo">
+      <p><strong>📞 Teléfono:</strong> 956 248 247</p>
+      <p><strong>💬 WhatsApp:</strong> 956 248 247</p>
+      <p><strong>📍 Ubicación:</strong> Andahuaylas, Perú</p>
+    </div>
   </div>
-
-  <div class="autos-imagen">
-    <!-- Puedes añadir imágenes de autos aquí si deseas -->
-  </div>
-
-  <!-- CONTACTO FIJO -->
-  <div class="contacto-fijo">
-    <span>📞 TELÉFONO: 956248247</span>
-    <span>💬 WHATSAPP: 956248247</span>
-    <span>📍 UBICACIÓN: ANDAHUAYLAS</span>
-  </div>
-</div>
-
-<!-- MODAL LOGIN / REGISTRO -->
-<div class="login-contenedor" [ngClass]="{ 'active': modalActivo }">
-  <form class="login-formulario" (submit)="cerrarLogin($event)">
-    <h2 class="login-titulo">{{ esRegistro ? 'Registrarse' : 'Acceder' }}</h2>
-
-    <input [(ngModel)]="email" name="email" type="email" placeholder="Correo electrónico" required />
-    <input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" required />
-
-    <div *ngIf="error" style="color: red; font-size: 0.9rem;">{{ error }}</div>
-
-    <button type="submit">{{ esRegistro ? 'Registrar' : 'Entrar' }}</button>
-    <button class="cancelar" (click)="cancelarLogin($event)">Cancelar</button>
-  </form>
 </div>
