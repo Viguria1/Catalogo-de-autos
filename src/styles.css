@@ -1,4 +1,4 @@
-/* en styles.css o navbar.component.css */
+/* Navbar principal */
 nav {
   display: flex;
   justify-content: space-between;
@@ -22,4 +22,49 @@ nav ul li a {
 nav .auth-buttons {
   display: flex;
   gap: 10px;
+}
+
+/* Estilos globales */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Estilos personalizados para Angular Material Snackbar */
+.snackbar-success {
+  background-color: #4caf50 !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.snackbar-error {
+  background-color: #f44336 !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.snackbar-info {
+  background-color: #2196f3 !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* Si usas alerts tradicionales */
+.alert-success {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.alert-error {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.alert-info {
+  background-color: #2196f3;
+  color: #fff;
 }

@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AutosService } from '../../services/autos.service';
 import { Auto } from '../../interfaces/auto';
+import { AlertService } from '../../services/alert.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-autos',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatSnackBarModule],
   providers: [AutosService],
   templateUrl: './autos.component.html',
   styleUrls: ['./autos.component.css']
@@ -23,7 +25,7 @@ export class AutosComponent implements OnInit {
   autoEnEdicion?: Auto;
   edicionActiva: boolean = false;
 
-  constructor(private autosService: AutosService) {}
+  constructor(private autosService: AutosService, private alertService: AlertService) {}
 
   ngOnInit() {
     this.autosService.obtenerAutos().subscribe((data: Auto[]) => {
@@ -75,10 +77,10 @@ export class AutosComponent implements OnInit {
           this.edicionActiva = false;
           this.autoEnEdicion = undefined;
           this.autoSeleccionado = undefined;
-          alert('Auto actualizado correctamente');
+          this.alertService.success('Auto actualizado correctamente');
         })
         .catch((err: any) => {
-          console.error('Error al actualizar:', err);
+          this.alertService.error('Error al actualizar el auto');
         });
     }
   }
@@ -87,9 +89,9 @@ export class AutosComponent implements OnInit {
     if (confirm('¿Estás seguro de que deseas eliminar este auto?')) {
       this.autosService.eliminarAuto(id).then(() => {
         this.autos = this.autos.filter(a => a.id !== id);
-        console.log('Auto eliminado con éxito');
+        this.alertService.success('Auto eliminado con éxito');
       }).catch((err: any) => {
-        console.error('Error al eliminar:', err);
+        this.alertService.error('Error al eliminar el auto');
       });
     }
   }
@@ -101,8 +103,9 @@ export class AutosComponent implements OnInit {
       const clave = prompt('Ingrese la contraseña para modo administrador');
       if (clave === '1234') {
         this.modoAdmin = true;
+        this.alertService.success('Modo administrador activado');
       } else {
-        alert('Contraseña incorrecta');
+        this.alertService.error('Contraseña incorrecta');
       }
     }
   }

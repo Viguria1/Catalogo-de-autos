@@ -23,7 +23,11 @@ export class AgregarAutoComponent {
     tipo: ['', Validators.required],
     lanzamiento: [2024, [Validators.required, Validators.min(2000), Validators.max(new Date().getFullYear())]],
     precio: [0, [Validators.required, Validators.min(5000), Validators.max(200000)]],
-    imagen: ['', [Validators.required, Validators.pattern(/^https?:\/\/.*\.(jpg|jpeg|png|webp)$/)]]
+    imagen: ['', [
+  Validators.required,
+  Validators.pattern(/^https?:\/\/.+\.(jpg|jpeg|png|webp)(\?.*)?$/i)
+]]
+
   });
 
   mensaje: string = '';
