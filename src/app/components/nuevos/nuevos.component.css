@@ -14,7 +14,7 @@
 .filtro-marca select {
   padding: 0.5rem;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #688cf1;
 }
 
 /* Grid de autos */
@@ -26,7 +26,7 @@
 
 /* Tarjeta */
 .auto-card {
-  background: #fff;
+  background: #c2c2c2;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -81,7 +81,7 @@
 }
 
 .modal-contenido {
-  background: white;
+  background: rgb(189, 189, 189);
   padding: 2rem;
   border-radius: 12px;
   max-width: 500px;

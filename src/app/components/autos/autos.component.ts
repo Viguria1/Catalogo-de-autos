@@ -18,6 +18,7 @@ export class AutosComponent implements OnInit {
   autoSeleccionado?: Auto;
   terminoBusqueda: string = '';
   modoAdmin: boolean = false;
+  criterioOrden: string = 'modelo';
 
   autoEnEdicion?: Auto;
   edicionActiva: boolean = false;
@@ -28,16 +29,18 @@ export class AutosComponent implements OnInit {
     this.autosService.obtenerAutos().subscribe((data: Auto[]) => {
       this.autos = data.filter(auto => auto.marca && auto.modelo && auto.imagen);
       this.marcas = [...new Set(this.autos.map(auto => auto.marca))];
+      this.ordenarAutos();
     });
   }
 
   getAutosFiltradosPorMarca(marca: string): Auto[] {
     const termino = this.terminoBusqueda.trim().toLowerCase();
-    return this.autos.filter(auto =>
+    const autosFiltrados = this.autos.filter(auto =>
       auto.marca === marca &&
       (termino === '' ||
         (auto.modelo + ' ' + auto.marca).toLowerCase().includes(termino))
     );
+    return this.ordenarLista(autosFiltrados);
   }
 
   hayAutosFiltrados(marca: string): boolean {
@@ -101,6 +104,20 @@ export class AutosComponent implements OnInit {
       } else {
         alert('Contraseña incorrecta');
       }
+    }
+  }
+
+  ordenarAutos() {
+    this.autos = this.ordenarLista(this.autos);
+  }
+
+  ordenarLista(lista: Auto[]): Auto[] {
+    if (this.criterioOrden === 'precio') {
+      return lista.sort((a, b) => a.precio - b.precio);
+    } else if (this.criterioOrden === 'lanzamiento') {
+      return lista.sort((a, b) => b.lanzamiento - a.lanzamiento);
+    } else {
+      return lista.sort((a, b) => a.modelo.localeCompare(b.modelo));
     }
   }
 

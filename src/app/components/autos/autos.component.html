@@ -29,6 +29,17 @@
   </div>
 
   <!-- Lista de autos por marca -->
+
+<div class="text-end mb-3">
+  <label for="orden">Ordenar por:</label>
+  <select id="orden" [(ngModel)]="criterioOrden" (change)="ordenarAutos()" class="form-select w-auto d-inline-block ms-2">
+    <option value="modelo">Modelo</option>
+    <option value="precio">Precio</option>
+    <option value="lanzamiento">Lanzamiento</option>
+  </select>
+</div>
+
+
   <div *ngFor="let marca of marcas">
     <ng-container *ngIf="hayAutosFiltrados(marca)">
       <h2 id="{{ marca }}">{{ marca }}</h2>
