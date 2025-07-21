@@ -282,3 +282,44 @@ h2 {
 .modal-contenido input.form-control {
   margin-bottom: 10px;
 }
+
+/* Paginación moderna con flechas */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.paginacion button {
+  border: 1px solid #007bff;
+  background-color: #fff;
+  color: #007bff;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.paginacion button:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+.paginacion button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.paginacion button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #e9ecef;
+  color: #6c757d;
+}

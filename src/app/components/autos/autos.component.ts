@@ -22,6 +22,10 @@ export class AutosComponent implements OnInit {
   modoAdmin: boolean = false;
   criterioOrden: string = 'modelo';
 
+  // Paginación por marca
+  paginaPorMarca: { [marca: string]: number } = {};
+  autosPorPagina: number = 8;
+
   autoEnEdicion?: Auto;
   edicionActiva: boolean = false;
 
@@ -31,22 +35,48 @@ export class AutosComponent implements OnInit {
     this.autosService.obtenerAutos().subscribe((data: Auto[]) => {
       this.autos = data.filter(auto => auto.marca && auto.modelo && auto.imagen);
       this.marcas = [...new Set(this.autos.map(auto => auto.marca))];
+      this.marcas.forEach(marca => this.paginaPorMarca[marca] = 1);
       this.ordenarAutos();
     });
   }
 
   getAutosFiltradosPorMarca(marca: string): Auto[] {
     const termino = this.terminoBusqueda.trim().toLowerCase();
-    const autosFiltrados = this.autos.filter(auto =>
+    const autosMarca = this.autos.filter(auto =>
       auto.marca === marca &&
-      (termino === '' ||
-        (auto.modelo + ' ' + auto.marca).toLowerCase().includes(termino))
+      (termino === '' || (auto.modelo + ' ' + auto.marca).toLowerCase().includes(termino))
     );
-    return this.ordenarLista(autosFiltrados);
+
+    const paginaActual = this.paginaPorMarca[marca] || 1;
+    const inicio = (paginaActual - 1) * this.autosPorPagina;
+    const fin = inicio + this.autosPorPagina;
+
+    return this.ordenarLista(autosMarca).slice(inicio, fin);
+  }
+
+  getTotalPaginas(marca: string): number {
+    const total = this.autos.filter(auto =>
+      auto.marca === marca &&
+      (this.terminoBusqueda.trim() === '' ||
+        (auto.modelo + ' ' + auto.marca).toLowerCase().includes(this.terminoBusqueda.trim().toLowerCase()))
+    ).length;
+
+    return Math.ceil(total / this.autosPorPagina);
+  }
+
+  cambiarPagina(marca: string, nuevaPagina: number) {
+    const totalPaginas = this.getTotalPaginas(marca);
+    if (nuevaPagina >= 1 && nuevaPagina <= totalPaginas) {
+      this.paginaPorMarca[marca] = nuevaPagina;
+    }
   }
 
   hayAutosFiltrados(marca: string): boolean {
-    return this.getAutosFiltradosPorMarca(marca).length > 0;
+    const termino = this.terminoBusqueda.trim().toLowerCase();
+    return this.autos.some(auto =>
+      auto.marca === marca &&
+      (termino === '' || (auto.modelo + ' ' + auto.marca).toLowerCase().includes(termino))
+    );
   }
 
   scrollTo(marca: string) {
@@ -79,7 +109,7 @@ export class AutosComponent implements OnInit {
           this.autoSeleccionado = undefined;
           this.alertService.success('Auto actualizado correctamente');
         })
-        .catch((err: any) => {
+        .catch(() => {
           this.alertService.error('Error al actualizar el auto');
         });
     }
@@ -90,7 +120,7 @@ export class AutosComponent implements OnInit {
       this.autosService.eliminarAuto(id).then(() => {
         this.autos = this.autos.filter(a => a.id !== id);
         this.alertService.success('Auto eliminado con éxito');
-      }).catch((err: any) => {
+      }).catch(() => {
         this.alertService.error('Error al eliminar el auto');
       });
     }

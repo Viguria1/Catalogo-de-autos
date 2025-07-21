@@ -1,5 +1,4 @@
 <div class="container">
-
   <!-- Buscador -->
   <div class="buscador-container">
     <input
@@ -28,18 +27,17 @@
     </div>
   </div>
 
-  <!-- Lista de autos por marca -->
+  <!-- Ordenamiento -->
+  <div class="text-end mb-3">
+    <label for="orden">Ordenar por:</label>
+    <select id="orden" [(ngModel)]="criterioOrden" (change)="ordenarAutos()" class="form-select w-auto d-inline-block ms-2">
+      <option value="modelo">Modelo</option>
+      <option value="precio">Precio</option>
+      <option value="lanzamiento">Lanzamiento</option>
+    </select>
+  </div>
 
-<div class="text-end mb-3">
-  <label for="orden">Ordenar por:</label>
-  <select id="orden" [(ngModel)]="criterioOrden" (change)="ordenarAutos()" class="form-select w-auto d-inline-block ms-2">
-    <option value="modelo">Modelo</option>
-    <option value="precio">Precio</option>
-    <option value="lanzamiento">Lanzamiento</option>
-  </select>
-</div>
-
-
+  <!-- Lista por marcas -->
   <div *ngFor="let marca of marcas">
     <ng-container *ngIf="hayAutosFiltrados(marca)">
       <h2 id="{{ marca }}">{{ marca }}</h2>
@@ -60,7 +58,6 @@
             <p>Año: {{ auto.lanzamiento }}</p>
             <p class="precio">{{ auto.precio | currency: 'USD' }}</p>
 
-            <!-- Botones modo administrador -->
             <div *ngIf="modoAdmin" class="admin-buttons mt-2">
               <button class="btn btn-sm btn-danger" (click)="eliminarAuto(auto.id!)">Eliminar</button>
               <button class="btn btn-sm btn-secondary" (click)="abrirDetalle(auto); activarEdicion(auto)">Editar</button>
@@ -68,24 +65,43 @@
           </div>
         </div>
       </div>
+
+      <!-- Paginación independiente por marca -->
+      <div class="paginacion text-center my-3">
+        <button
+          (click)="cambiarPagina(marca, (paginaPorMarca[marca] || 1) - 1)"
+          [disabled]="(paginaPorMarca[marca] || 1) === 1">
+          ◀
+        </button>
+
+        <button
+          *ngFor="let pagina of [].constructor(getTotalPaginas(marca)); let i = index"
+          (click)="cambiarPagina(marca, i + 1)"
+          [class.active]="(paginaPorMarca[marca] || 1) === i + 1"
+          class="btn btn-outline-primary mx-1 btn-sm"
+        >
+          {{ i + 1 }}
+        </button>
+
+        <button
+          (click)="cambiarPagina(marca, (paginaPorMarca[marca] || 1) + 1)"
+          [disabled]="(paginaPorMarca[marca] || 1) === getTotalPaginas(marca)">
+          ▶
+        </button>
+      </div>
     </ng-container>
   </div>
 
-  <!-- Botón para activar modo admin (ahora al final) -->
+  <!-- Botón modo admin -->
   <div class="text-center my-5">
     <button class="btn btn-dark" (click)="verificarPassword()">
       {{ modoAdmin ? 'Salir del modo administrador' : 'Modo administrador' }}
     </button>
   </div>
 
-  <!-- Detalle modal -->
-  <div
-    class="modal-backdrop"
-    *ngIf="autoSeleccionado"
-    (click)="cerrarDetalle()"
-  >
+  <!-- Modal -->
+  <div class="modal-backdrop" *ngIf="autoSeleccionado" (click)="cerrarDetalle()">
     <div class="modal-contenido" (click)="$event.stopPropagation()">
-
       <!-- MODO EDICIÓN -->
       <div *ngIf="edicionActiva && autoEnEdicion">
         <h4>Editar Auto</h4>
@@ -99,18 +115,10 @@
         <input class="form-control mb-2" [(ngModel)]="autoEnEdicion.tipo" />
 
         <label>Lanzamiento:</label>
-        <input
-          type="number"
-          class="form-control mb-2"
-          [(ngModel)]="autoEnEdicion.lanzamiento"
-        />
+        <input type="number" class="form-control mb-2" [(ngModel)]="autoEnEdicion.lanzamiento" />
 
         <label>Precio:</label>
-        <input
-          type="number"
-          class="form-control mb-2"
-          [(ngModel)]="autoEnEdicion.precio"
-        />
+        <input type="number" class="form-control mb-2" [(ngModel)]="autoEnEdicion.precio" />
 
         <label>Imagen (URL):</label>
         <input class="form-control mb-3" [(ngModel)]="autoEnEdicion.imagen" />
@@ -133,8 +141,6 @@
         <p><strong>Precio:</strong> {{ autoSeleccionado.precio | currency: 'USD' }}</p>
         <button class="btn btn-outline-dark" (click)="cerrarDetalle()">Cerrar</button>
       </div>
-
     </div>
   </div>
-
 </div>
