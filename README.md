@@ -1,12 +1,12 @@
-# 🚗 Catálogo de Autos
+#  Catálogo de Autos
 
-## 📌 Descripción
+##  Descripción
 
 Aplicación web desarrollada con Angular que permite gestionar un catálogo de autos clasificados por marcas. Cuenta con sistema de login/registro, panel de administración, filtros, búsqueda, ordenamiento, detalle individual, CRUD completo y paginación por marca.
 
 ---
 
-## 🛠️ Tecnologías usadas
+##  Tecnologías usadas
 
 - Angular CLI version 19.2.15.
 - TypeScript
@@ -18,7 +18,7 @@ Aplicación web desarrollada con Angular que permite gestionar un catálogo de a
 
 ---
 
-## ⚙️ Cómo instalar y ejecutar
+##  Cómo instalar y ejecutar
 
 1. Clona el repositorio:
 
@@ -41,7 +41,7 @@ ng serve
 http://localhost:4200/
 ```
 
-## 🧱 Arquitectura básica del proyecto
+##  Arquitectura básica del proyecto
 ```bash
 src/
 │
@@ -67,13 +67,13 @@ src/
 http:adbuhisdaasdad
 ```
 
-## 👨‍💻 AUTORES
+##  AUTORES
 
 Andy Yhonai Viguria Urpi — Trabajo Final de Angular 2025
 
 Maicol Orosco Herhuay — Trabajo Final de Angular 2025
 
-## 🧰 Generación de código (Scaffolding)
+##  Generación de código (Scaffolding)
 
 Angular CLI incluye potentes herramientas para generar código automáticamente. Para generar un nuevo componente, ejecuta:
 
@@ -87,7 +87,7 @@ Para ver la lista completa de esquemas disponibles (como components, directives 
 ng generate --help
 ```
 
-## 🏗️ Compilar el proyecto
+##  Compilar el proyecto
 
 Para compilar el proyecto, ejecuta:
 
