@@ -42,7 +42,7 @@ http://localhost:4200/
 ```
 
 ## 🧱 Arquitectura básica del proyecto
-
+```bash
 src/
 │
 ├── app/
@@ -60,6 +60,7 @@ src/
 │   └── app.routes.ts
 │
 └── index.html
+```
 
 ## URL DEL VIDEO DE PRESENTACION:
 ```bash
