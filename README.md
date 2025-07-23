@@ -64,7 +64,7 @@ src/
 
 ## URL DEL VIDEO DE PRESENTACION:
 ```bash
-https://youtu.be/vwtl7pZ2iIQ?list=PLoqM5eIpDpUEhtUNKuOd-sGll7NrvlwD7
+https:
 ```
 
 ##  AUTORES
